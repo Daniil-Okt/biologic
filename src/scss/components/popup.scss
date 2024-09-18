@@ -1,0 +1,330 @@
+.popup {
+  $white-100: #fff;
+
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  overflow-y: auto;
+  pointer-events: none;
+
+  /** Установить свои значения */
+  padding: rem(30) rem(10);
+  background-color: rgba(#000, 50%);
+  z-index: 2000;
+  transition: opacity 0.4s ease-in-out;
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: auto;
+
+    .popup__content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  // .popup__wrapper
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+  }
+
+  // .popup__content
+  &__content {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    /** Установить свои значения */
+    padding: rem(30) rem(50);
+    max-width: rem(690);
+    background-color: rgba(219, 221, 206, 1);
+    transform: translateY(rem(-200));
+    opacity: 0;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  }
+
+  // .popup__close
+  &__close {
+    position: absolute;
+
+    /** Установить свои значения */
+    top: rem(-32);
+    right: rem(-32);
+    width: rem(22);
+    height: rem(22);
+    @media(max-width:1320px){
+      right: 0;
+      top: rem(-38);
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    color: #000;
+    border-radius: rem(8);
+  }
+}
+
+.popup {
+
+  &__body {
+  }
+}
+.popup-products {
+  @media(max-width:800px){
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-top: rem(92);
+    
+    .button-close {
+      right: rem(16);
+    }
+  }
+
+  &__wrapper {
+    @media(max-width:800px){
+        align-items: end;
+
+    }
+  }
+  &__content {
+    max-width: rem(1195);
+    padding: 0;
+    max-height: rem(720);
+    @media(max-width:800px){
+        height: auto;
+        max-height: 100%;
+        flex: auto;
+        border-radius: 20px 20px 0px 0px;
+
+        transform: translateY(100%);
+    }
+  }
+  &__body {
+    display: flex;
+    @media(max-width:800px){
+        flex-direction: column;
+    }
+  }
+
+  &__left {
+    @include adaptiveClamp(max-width, 560, 360);
+    @include adaptiveClamp(min-width, 560, 360);
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    @include adaptiveClamp(padding-top, 80, 16);
+    padding-left: rem(55);
+    padding-right: rem(55);
+    @include adaptiveClamp(padding-bottom, 86, 16);
+    
+    background-color: rgba(237, 238, 231, 1);
+    border-radius: 20px 0px 0px 20px;
+    @media(max-width:800px){
+      @include adaptiveClamp(max-width, 1000, 900);
+      @include adaptiveClamp(min-width, 10, 5);
+      border-radius: 20px 20px 0px 0px;
+      @include adaptiveClamp(padding-bottom, 26, 16);
+      @include adaptiveClamp(padding-top, 26, 16);
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+    @media(max-width:800px){
+      @include adaptiveClamp(max-width, 400, 250);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__wrapper {
+  }
+
+  &__slide {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__buttons-slider {
+    display: flex;
+    justify-content: center;
+    gap: rem(24);
+    transition: all 0.3s ease  0s;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__button-slide {
+    width: rem(24);
+    svg {
+      width: 100%;
+    }
+  }
+
+  &__button-prev {
+  }
+
+  &__pagintainon {
+  }
+
+  &__button-next {
+  }
+
+  &__right {
+    position: relative;
+    @include adaptiveClamp(padding-top, 40, 16);
+    @include adaptiveClamp(padding-left, 50, 16);
+    padding-bottom: rem(40);
+    
+    display: flex;
+    flex-direction: column;
+    @media(max-width:800px){
+        max-height: rem(460);
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    @include adaptiveClamp(font-size, 22, 18);
+    line-height: 120%;
+    @include adaptiveClamp(margin-bottom, 20, 16);
+  }
+  &__body-text {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveClamp(gap, 20, 16);
+    overflow-y: auto;
+    max-height: rem(520);
+    padding-bottom: rem(70);
+    @include adaptiveClamp(padding-right, 25, 8);
+    @include adaptiveClamp(margin-right, 24, 16);
+    cursor: all-scroll;
+
+    scrollbar-width: rem(4);
+    scrollbar-color: rgba(13, 71, 51, 1) #d6d6d6;
+  
+    @media(max-width:800px){
+      max-height: rem(330);
+    }
+    // Chrome, Edge, and Safari
+    &::-webkit-scrollbar {
+      width: rem(8);
+      background-color: var(--white-color);
+    }
+  
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 rem(4) rgba(13, 71, 51, 0.2);
+      border-radius: rem(8);
+      background: #eee;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      border-radius: rem(8);
+      border: 0 none #fff;
+      background-color: rgba(13, 71, 51, 1);
+  
+      &:hover {
+        background-color: rgba(13, 71, 51, 0.9);
+      }
+    }
+  }
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveClamp(gap, 10, 4);
+    * {
+      @include adaptiveClamp(font-size, 18, 14);
+      line-height: 120%;
+      b {
+        font-weight: 600;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      @include adaptiveClamp(gap, 10, 6);
+      li {
+        position: relative;
+        @include adaptiveClamp(padding-left, 22, 18);
+
+        &::before {
+            position: absolute;
+            content: '';
+            @include adaptiveClamp(width, 12, 8);
+            @include adaptiveClamp(height, 12, 8);
+            border-radius: 50%;
+            background: rgba(224, 139, 47, 1);
+            @include adaptiveClamp(top, 6, 3);
+            left: 0;
+        }
+      }
+    }
+  }
+
+  &__bot {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    background: #b2bfaf;
+    border-radius: 0 0 20px 0;
+    gap: rem(30);
+    row-gap: rem(11);
+    justify-content: center;
+    flex-wrap: wrap;
+    @include adaptiveClamp(padding-bottom, 20, 16);
+    @include adaptiveClamp(padding-top, 20, 11);
+    @include adaptiveClamp(padding-left, 50, 20);
+    @include adaptiveClamp(padding-right, 50, 20);
+    @media(max-width:800px){
+      border-radius: 0;
+    }
+  }
+
+  &__price {
+    font-weight: 600;
+    @include adaptiveClamp(font-size, 22, 18);
+    line-height: 120%;
+    text-align: right;
+    margin-left: auto;
+
+  }
+
+  &__button {
+    // margin-left: auto;
+    // margin-right: auto;
+  }
+}
+
+.quantity {
+
+  &__row {
+  }
+
+  &__number-minus {
+  }
+
+  &__input {
+  }
+
+  &__number-plus {
+  }
+}
+

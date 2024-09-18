@@ -1,0 +1,153 @@
+// Заголовки, общие БЄМ блоки и проче...
+body {
+    background-color: rgba(219, 221, 206, 1)
+}
+* {
+    color:rgba(13, 71, 51, 1);
+}
+.crumbs {
+    @include adaptiveClamp(padding-top, 35, 21);
+    &__container {
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        @include adaptiveClamp(gap, 10, 8);
+        flex-wrap: wrap;
+        a {
+            @include adaptiveClamp(font-size, 16, 12);
+            color: var(--gray);
+            transition: all 0.3s ease  0s;
+            cursor: pointer;
+            &:hover {
+                color: rgb(97, 113, 98);
+            }
+
+            &.active {
+                color: var(--gray-bl);
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__line {
+        width: rem(1);
+        height: 100%;
+        background-color: rgba(157, 176, 159, 1);
+        @include adaptiveClamp(height, 21, 16);
+        border-radius: 10px;
+        pointer-events: none;
+    }
+}
+.active {
+}
+
+
+.button {
+    display: block;
+    box-shadow: 0 0 2px 0 rgba(13, 71, 51, 0.5);
+    background-color: rgba(219, 221, 206, 1);
+    padding-left: rem(20);
+    padding-right: rem(20);
+    @include adaptiveClamp(padding-top, 13, 9);
+    @include adaptiveClamp(padding-bottom, 13, 9);
+    border-radius: 20px;
+    transition: all 0.3s ease  0s;
+    cursor: pointer;
+    &:hover {
+        color: var(--orange);
+    }
+
+    &.gray {
+        background-color: rgba(13, 71, 51, 1);
+        color: rgba(219, 221, 206, 1);
+        padding-left: rem(24);
+        padding-right: rem(24);
+        font-weight: 600;
+        &:hover {
+            background: rgba(237, 238, 231, 1) ;
+            box-shadow: 0px 0px 2px rgba(13, 71, 51, 0.5);
+            color: rgba(13, 71, 51, 1) ;
+            
+        }
+    }
+}
+
+
+.quantity {
+    &__row  {
+        display: flex;
+        gap: rem(10);
+    }
+    &__number-minus,  &__number-plus {
+        padding: rem(12) rem(16);
+        background-color: rgba(237, 238, 231, 1);
+        box-shadow: 0 0 2px 0 rgba(13, 71, 51, 0.5);
+
+        @include adaptiveClamp(width, 30, 24);
+        @include adaptiveClamp(height, 30, 24);
+        transition: all 0.3s ease  0s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: rem(22);
+        line-height: 120%;
+        border-radius: 4px;
+        &:hover {
+            box-shadow: 0px 0px 4px rgba(13, 71, 51, 1);
+        }
+    }
+  
+    &__input {
+        display: inline-block;
+        border-left: 0 ;
+        border-right: 0;
+        @include adaptiveClamp(width, 30, 24);
+        margin-left: rem(6);
+        margin-right: rem(6);
+        @include adaptiveClamp(height, 30, 24);
+        border-radius: 0;
+        background: none;
+        height: rem(46);
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: 600;
+        @include adaptiveClamp(font-size, 22, 18);
+        line-height: 120%;
+        border-radius: 4px;
+    }
+}
+.swiper-pagination {
+    position: relative !important;
+    bottom: 0 !important;
+    left: auto !important;
+    display: inline-flex;
+    align-items: center;
+    width: auto !important;
+
+}
+.swiper-pagination-bullet {
+    transform: scale(1);
+    opacity: 0.2;
+    background: #74BBA2;
+    width: rem(12);
+    height: rem(12);
+    transform: scale(0.9);
+    transition: all 0.3s ease  0s;
+    margin-left: rem(2) !important;
+    margin-right: rem(2) !important;
+}
+
+.swiper-pagination-bullet-active {
+
+    background: rgba(224, 139, 47, 1);
+    opacity: 1;
+    transform: scale(1);
+} 

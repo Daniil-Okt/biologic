@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Каталог'
+  })
+  <body>
+    <div class="wrapper">
+
+      <main class="page">
+        <div data-observ></div>
+        <div class="crumbs">
+            <div class="crumbs__container">
+                <div class="crumbs__row">
+                    <a href="#">
+                        Главная
+                    </a>
+                    <div class="crumbs__line"></div>
+                    <a href="#" class="active">
+                        Комфортное меню
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="catalog">
+            <div class="catalog__menu-fixed catalog-menu-fixed">
+                <div class="catalog-menu-fixed__container">
+                    <div class="catalog-top__menu catalog-menu">
+                        <div class="catalog-menu__row">
+                            <a href="#" class="catalog-menu__item">
+                                Закуски
+                            </a>
+                            <a href="#" class="catalog-menu__item active">
+                                Салаты
+                            </a>
+                            <a href="#" class="catalog-menu__item">
+                                Супы
+                            </a>
+                            <a href="#" class="catalog-menu__item">
+                                Гарниры
+                            </a>
+                            <a href="#" class="catalog-menu__item">
+                                Горячее
+                            </a>
+                            <div class="catalog-menu__item-all catalog-menu-item-all">
+                                    <span>Ещё</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30894 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733" />
+                                    </svg>
+
+                                <div class="catalog-menu-item-all__body">
+                                    <div class="catalog-menu-item-all__row">
+                                        <a href="#" class="catalog-menu__item active">
+                                            Супы
+                                        </a>
+                                        <a href="#" class="catalog-menu__item">
+                                            Гарниры
+                                        </a>
+                                        <a href="#" class="catalog-menu__item">
+                                            Горячее
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="catalog__container">
+                <div class="catalog__top catalog-top">
+                    <div class="catalog-top__left">
+                        <div class="catalog-top__button-row">
+                            <a href="#" class="catalog-top__button-type">
+                                Завтрак
+                            </a>
+                            <a href="#" class="catalog-top__button-type active">
+                                Обед
+                            </a>
+                            <a href="#" class="catalog-top__button-type">
+                                Ужин
+                            </a>
+                            <a href="#" class="catalog-top__button-type">
+                                Ночной перекус
+                            </a>
+                        </div>
+                        <div class="catalog-top__menu catalog-menu">
+                            <div class="catalog-menu__row">
+                                <a href="#" class="catalog-menu__item">
+                                    Закуски
+                                </a>
+                                <a href="#" class="catalog-menu__item active">
+                                    Салаты
+                                </a>
+                                <a href="#" class="catalog-menu__item">
+                                    Супы
+                                </a>
+                                <a href="#" class="catalog-menu__item">
+                                    Гарниры
+                                </a>
+                                <a href="#" class="catalog-menu__item">
+                                    Горячее
+                                </a>
+                                <div class="catalog-menu__item-all catalog-menu-item-all">
+                                        <span>Ещё</span>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30894 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733" />
+                                        </svg>
+    
+                                    <div class="catalog-menu-item-all__body">
+                                        <div class="catalog-menu-item-all__row">
+                                            <a href="#" class="catalog-menu__item active">
+                                                Супы
+                                            </a>
+                                            <a href="#" class="catalog-menu__item">
+                                                Гарниры
+                                            </a>
+                                            <a href="#" class="catalog-menu__item">
+                                                Горячее
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="catalog-top__right catalog-right">
+                        <div class="catalog-top__bouquet catalog-bouquet">
+                            <h3 class="catalog-bouquet__title">
+                                Добавьте букет к заказу
+                            </h3>
+                            <p class="catalog-bouquet__text">
+                                Сделайте свой заказ еще более особенным
+                            </p>
+                            <div class="catalog-bouquet__row">
+                                <div class="catalog-bouquet__img">
+                                    <img src="@img/catalog-bouquet-img.png" alt="">
+                                </div>
+                                <div class="catalog-bouquet__body">
+                                    <h4>
+                                        <span>Цветочная студия</span>
+                                        <span><b>Bloom</b></span>
+                                    </h4>
+                                    <div class="catalog-bouquet__price" data-da=".catalog-bouquet__bot, 520, first">
+                                        1 500 руб.
+                                    </div>
+                                    <div class="catalog-bouquet__button" data-type="popup-products" data-da=".catalog-bouquet__bot, 520, last">
+                                        Добавить в корзину
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog-bouquet__bot"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__product">
+                    <h2 class="catalog__title">
+                        Салаты
+                    </h2>
+                    <div class="catalog__row">
+                        <div class="catalog__card catalog-card">
+                            <div class="catalog-card__wrap">
+                                <div class="catalog-card__top">
+                                    <div class="catalog-card__img">
+                                        <img src="@img/catalog-card-img.png" alt="">
+                                    </div>
+                                    <div class="catalog-card__body">
+                                        <h3 class="catalog-card__title">
+                                            Салат с тунцом
+                                        </h3>
+                                        <div class="catalog-card__calorie">
+                                            <p>
+                                                Б/Ж/У — 22/15/5
+                                            </p>
+                                            <p>
+                                                200 г. — 270 ккал
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="catalog-card__text">
+                                    Тунец - один из самых богатых источников омега-3 жирных кислот, которые полезны для сердечно-сосудистой системы
+                                </p>
+                                <div class="catalog-card__bot">
+                                    <div class="catalog-card__price">
+                                        700 руб.
+                                    </div>
+                                    <div class="catalog-card__button button active">
+                                        <span>Убрать</span>
+                                        Выбрать
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__card catalog-card">
+                            <div class="catalog-card__wrap">
+                                <div class="catalog-card__top">
+                                    <div class="catalog-card__img">
+                                        <img src="@img/catalog-card-img.png" alt="">
+                                    </div>
+                                    <div class="catalog-card__body">
+                                        <h3 class="catalog-card__title">
+                                            Салат с тунцом
+                                        </h3>
+                                        <div class="catalog-card__calorie">
+                                            <p>
+                                                Б/Ж/У — 22/15/5
+                                            </p>
+                                            <p>
+                                                200 г. — 270 ккал
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="catalog-card__text">
+                                    Тунец - один из самых богатых источников омега-3 жирных кислот, которые полезны для сердечно-сосудистой системы
+                                </p>
+                                <div class="catalog-card__bot">
+                                    <div class="catalog-card__price">
+                                        700 руб.
+                                    </div>
+                                    <div class="catalog-card__button button">
+                                        <span>Выбрать</span>
+                                        Выбрать
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__card catalog-card">
+                            <div class="catalog-card__wrap">
+                                <div class="catalog-card__top">
+                                    <div class="catalog-card__img">
+                                        <img src="@img/catalog-card-img.png" alt="">
+                                    </div>
+                                    <div class="catalog-card__body">
+                                        <h3 class="catalog-card__title">
+                                            Салат с тунцом
+                                        </h3>
+                                        <div class="catalog-card__calorie">
+                                            <p>
+                                                Б/Ж/У — 22/15/5
+                                            </p>
+                                            <p>
+                                                200 г. — 270 ккал
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="catalog-card__text">
+                                    Тунец - один из самых богатых источников омега-3 жирных кислот, которые полезны для сердечно-сосудистой системы
+                                </p>
+                                <div class="catalog-card__bot">
+                                    <div class="catalog-card__price">
+                                        700 руб.
+                                    </div>
+                                    <div class="catalog-card__button button">
+                                        <span>Выбрать</span>
+                                        Выбрать
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__card catalog-card">
+                            <div class="catalog-card__wrap">
+                                <div class="catalog-card__top">
+                                    <div class="catalog-card__img">
+                                        <img src="@img/catalog-card-img.png" alt="">
+                                    </div>
+                                    <div class="catalog-card__body">
+                                        <h3 class="catalog-card__title">
+                                            Салат с тунцом
+                                        </h3>
+                                        <div class="catalog-card__calorie">
+                                            <p>
+                                                Б/Ж/У — 22/15/5
+                                            </p>
+                                            <p>
+                                                200 г. — 270 ккал
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="catalog-card__text">
+                                    Тунец - один из самых богатых источников омега-3 жирных кислот, которые полезны для сердечно-сосудистой системы
+                                </p>
+                                <div class="catalog-card__bot">
+                                    <div class="catalog-card__price">
+                                        700 руб.
+                                    </div>
+                                    <div class="catalog-card__button button">
+                                        <span>Выбрать</span>
+                                        Выбрать
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__card catalog-card">
+                            <div class="catalog-card__wrap">
+                                <div class="catalog-card__top">
+                                    <div class="catalog-card__img">
+                                        <img src="@img/catalog-card-img.png" alt="">
+                                    </div>
+                                    <div class="catalog-card__body">
+                                        <h3 class="catalog-card__title">
+                                            Салат с тунцом
+                                        </h3>
+                                        <div class="catalog-card__calorie">
+                                            <p>
+                                                Б/Ж/У — 22/15/5
+                                            </p>
+                                            <p>
+                                                200 г. — 270 ккал
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="catalog-card__text">
+                                    Тунец - один из самых богатых источников омега-3 жирных кислот, которые полезны для сердечно-сосудистой системы
+                                </p>
+                                <div class="catalog-card__bot">
+                                    <div class="catalog-card__price">
+                                        700 руб.
+                                    </div>
+                                    <div class="catalog-card__button button">
+                                        <span>Выбрать</span>
+                                        Выбрать
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__card catalog-card">
+                            <div class="catalog-card__wrap">
+                                <div class="catalog-card__top">
+                                    <div class="catalog-card__img">
+                                        <img src="@img/catalog-card-img.png" alt="">
+                                    </div>
+                                    <div class="catalog-card__body">
+                                        <h3 class="catalog-card__title">
+                                            Салат с тунцом
+                                        </h3>
+                                        <div class="catalog-card__calorie">
+                                            <p>
+                                                Б/Ж/У — 22/15/5
+                                            </p>
+                                            <p>
+                                                200 г. — 270 ккал
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="catalog-card__text">
+                                    Тунец - один из самых богатых источников омега-3 жирных кислот, которые полезны для сердечно-сосудистой системы
+                                </p>
+                                <div class="catalog-card__bot">
+                                    <div class="catalog-card__price">
+                                        700 руб.
+                                    </div>
+                                    <div class="catalog-card__button button">
+                                        <span>Выбрать</span>
+                                        Выбрать
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__card catalog-card">
+                            <div class="catalog-card__wrap">
+                                <div class="catalog-card__top">
+                                    <div class="catalog-card__img">
+                                        <img src="@img/catalog-card-img.png" alt="">
+                                    </div>
+                                    <div class="catalog-card__body">
+                                        <h3 class="catalog-card__title">
+                                            Салат с тунцом
+                                        </h3>
+                                        <div class="catalog-card__calorie">
+                                            <p>
+                                                Б/Ж/У — 22/15/5
+                                            </p>
+                                            <p>
+                                                200 г. — 270 ккал
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="catalog-card__text">
+                                    Тунец - один из самых богатых источников омега-3 жирных кислот, которые полезны для сердечно-сосудистой системы
+                                </p>
+                                <div class="catalog-card__bot">
+                                    <div class="catalog-card__price">
+                                        700 руб.
+                                    </div>
+                                    <div class="catalog-card__button button">
+                                        <span>Выбрать</span>
+                                        Выбрать
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+      </main>
+
+    </div>
+
+    @@include('html/popup-example.html')
+  </body>
+</html>
