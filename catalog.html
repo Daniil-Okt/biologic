@@ -8,9 +8,9 @@
   <title>Каталог</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20240918211008">
+  <link rel="stylesheet" href="css/main.min.css?_v=20240918235210">
 
-  <script defer="defer" src="js/main.min.js?_v=20240918211008"></script>
+  <script defer="defer" src="js/main.min.js?_v=20240918235210"></script>
 </head>
 
   <body>
@@ -198,7 +198,7 @@
                                     <div class="catalog-card__price">
                                         700 руб.
                                     </div>
-                                    <div class="button catalog-card__button active">
+                                    <div class="button catalog-card__button active basket-open">
                                         <span>Убрать</span>
                                         Выбрать
                                     </div>
@@ -416,12 +416,277 @@
                     
                 </div>
             </div>
-
         </div>
+        
       </main>
 
     </div>
-
+    <div class="basket">
+    
+    <div class="basket__container">
+        <div class="basket__content">
+            <div class="basket-close basket__button-close">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3907 2.3582C21.7795 1.96598 21.7795 1.33006 21.3907 0.937833L20.7526 0.294168C20.3638 -0.0980562 19.7334 -0.0980561 19.3446 0.294169L10.9371 8.77537L2.6376 0.403128C2.24878 0.0109033 1.61839 0.0109033 1.22957 0.403128L0.591496 1.04679C0.20268 1.43902 0.20268 2.07494 0.591497 2.46716L8.89099 10.8394L0.291612 19.5142C-0.0972041 19.9064 -0.0972042 20.5423 0.291612 20.9345L0.929684 21.5782C1.3185 21.9704 1.9489 21.9704 2.33771 21.5782L10.9371 12.9034L19.6445 21.6872C20.0333 22.0794 20.6637 22.0794 21.0525 21.6872L21.6906 21.0435C22.0794 20.6513 22.0794 20.0153 21.6906 19.6231L12.9832 10.8394L21.3907 2.3582Z" fill="#EDEEE7"/>
+                </svg>
+            </div>
+            <div class="basket__top">
+                <div class="basket__text-block basket__price">
+                    <p>
+                        4 товара
+                    </p>
+                    <p>
+                        3 450 руб.
+                    </p>
+                </div>
+            </div>
+            <div class="basket__body">
+                <div class="basket__product-row">
+                    <div class="basket-product basket__product">
+                        <div class="basket-product__left">
+                            <div class="basket-product__img">
+                                <picture><source srcset="images/basket-product-img.webp" type="image/webp"><img src="images/basket-product-img.png" alt=""></picture>
+                            </div>
+                            <h3 class="basket-product__title">
+                                Салат с тунцом
+                            </h3>
+                        </div>
+                        <div class="basket-product__right">
+                            <div class="quantity">
+                                <div class="quantity__row">
+                                    <button class="quantity__number-minus" type="button">
+                                        -
+                                    </button>
+                                    <input type="number" min="1" value="1" readonly="readonly" class="quantity__input">
+                                    <button class="quantity__number-plus" type="button">
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="basket-product__price">
+                                700 руб.
+                            </div>
+                            <div class="basket-product__delete">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7952 1.80036C14.1483 1.44413 14.1483 0.866567 13.7952 0.510337C13.442 0.154107 12.8695 0.154106 12.5164 0.510336L7.46107 5.60994L2.47328 0.578437C2.12015 0.222207 1.5476 0.222207 1.19447 0.578436C0.841332 0.934666 0.841331 1.51223 1.19447 1.86846L6.18225 6.89996L1.00704 12.1205C0.653904 12.4768 0.653904 13.0543 1.00704 13.4106C1.36017 13.7668 1.93272 13.7668 2.28585 13.4106L7.46107 8.18999L12.7038 13.4787C13.0569 13.8349 13.6295 13.8349 13.9826 13.4787C14.3357 13.1224 14.3357 12.5449 13.9826 12.1886L8.73988 6.89996L13.7952 1.80036Z" fill="#9DB09F"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket-product basket__product">
+                        <div class="basket-product__left">
+                            <div class="basket-product__img">
+                                <picture><source srcset="images/basket-product-img.webp" type="image/webp"><img src="images/basket-product-img.png" alt=""></picture>
+                            </div>
+                            <h3 class="basket-product__title">
+                                Салат с тунцом
+                            </h3>
+                        </div>
+                        <div class="basket-product__right">
+                            <div class="quantity">
+                                <div class="quantity__row">
+                                    <button class="quantity__number-minus" type="button">
+                                        -
+                                    </button>
+                                    <input type="number" min="1" value="1" readonly="readonly" class="quantity__input">
+                                    <button class="quantity__number-plus" type="button">
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="basket-product__price">
+                                700 руб.
+                            </div>
+                            <div class="basket-product__delete">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7952 1.80036C14.1483 1.44413 14.1483 0.866567 13.7952 0.510337C13.442 0.154107 12.8695 0.154106 12.5164 0.510336L7.46107 5.60994L2.47328 0.578437C2.12015 0.222207 1.5476 0.222207 1.19447 0.578436C0.841332 0.934666 0.841331 1.51223 1.19447 1.86846L6.18225 6.89996L1.00704 12.1205C0.653904 12.4768 0.653904 13.0543 1.00704 13.4106C1.36017 13.7668 1.93272 13.7668 2.28585 13.4106L7.46107 8.18999L12.7038 13.4787C13.0569 13.8349 13.6295 13.8349 13.9826 13.4787C14.3357 13.1224 14.3357 12.5449 13.9826 12.1886L8.73988 6.89996L13.7952 1.80036Z" fill="#9DB09F"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket-product basket__product">
+                        <div class="basket-product__left">
+                            <div class="basket-product__img">
+                                <picture><source srcset="images/basket-product-img.webp" type="image/webp"><img src="images/basket-product-img.png" alt=""></picture>
+                            </div>
+                            <h3 class="basket-product__title">
+                                Салат с рыбой и авокадо
+                            </h3>
+                        </div>
+                        <div class="basket-product__right">
+                            <div class="quantity">
+                                <div class="quantity__row">
+                                    <button class="quantity__number-minus" type="button">
+                                        -
+                                    </button>
+                                    <input type="number" min="1" value="1" readonly="readonly" class="quantity__input">
+                                    <button class="quantity__number-plus" type="button">
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="basket-product__price">
+                                700 руб.
+                            </div>
+                            <div class="basket-product__delete">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7952 1.80036C14.1483 1.44413 14.1483 0.866567 13.7952 0.510337C13.442 0.154107 12.8695 0.154106 12.5164 0.510336L7.46107 5.60994L2.47328 0.578437C2.12015 0.222207 1.5476 0.222207 1.19447 0.578436C0.841332 0.934666 0.841331 1.51223 1.19447 1.86846L6.18225 6.89996L1.00704 12.1205C0.653904 12.4768 0.653904 13.0543 1.00704 13.4106C1.36017 13.7668 1.93272 13.7668 2.28585 13.4106L7.46107 8.18999L12.7038 13.4787C13.0569 13.8349 13.6295 13.8349 13.9826 13.4787C14.3357 13.1224 14.3357 12.5449 13.9826 12.1886L8.73988 6.89996L13.7952 1.80036Z" fill="#9DB09F"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="basket__title-row">
+                    Добавить к заказу
+                </div>
+                <div class="basket__added-row">
+                    <div class="basket-product basket-added basket__added">
+                        <div class="basket-product__left">
+                            <div class="basket-product__img">
+                                <picture><source srcset="images/basket-added-img.webp" type="image/webp"><img src="images/basket-added-img.png" alt=""></picture>
+                            </div>
+                            <h3 class="basket-product__title">
+                                Морс лесные ягоды
+                            </h3>
+                        </div>
+                        <div class="basket-product__right">
+                            <div class="basket-product__price">
+                                700 руб.
+                            </div>
+                            <div class="button basket-added__button-add">
+                                Добавить
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket-product basket-added basket__added">
+                        <div class="basket-product__left">
+                            <div class="basket-product__img">
+                                <picture><source srcset="images/basket-added-img.webp" type="image/webp"><img src="images/basket-added-img.png" alt=""></picture>
+                            </div>
+                            <h3 class="basket-product__title">
+                                Морс лесные ягоды
+                            </h3>
+                        </div>
+                        <div class="basket-product__right">
+                            <div class="basket-product__price">
+                                700 руб.
+                            </div>
+                            <div class="button basket-added__button-add">
+                                Добавить
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket-product basket-added basket__added">
+                        <div class="basket-product__left">
+                            <div class="basket-product__img">
+                                <picture><source srcset="images/basket-added-img.webp" type="image/webp"><img src="images/basket-added-img.png" alt=""></picture>
+                            </div>
+                            <h3 class="basket-product__title">
+                                Морс лесные ягоды
+                            </h3>
+                        </div>
+                        <div class="basket-product__right">
+                            <div class="basket-product__price">
+                                700 руб.
+                            </div>
+                            <div class="button basket-added__button-add">
+                                Добавить
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket-product basket-added basket__added">
+                        <div class="basket-product__left">
+                            <div class="basket-product__img">
+                                <picture><source srcset="images/basket-added-img.webp" type="image/webp"><img src="images/basket-added-img.png" alt=""></picture>
+                            </div>
+                            <h3 class="basket-product__title">
+                                Морс лесные ягоды
+                            </h3>
+                        </div>
+                        <div class="basket-product__right">
+                            <div class="basket-product__price">
+                                700 руб.
+                            </div>
+                            <div class="button basket-added__button-add">
+                                Добавить
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket-product basket-added basket__added">
+                        <div class="basket-product__left">
+                            <div class="basket-product__img">
+                                <picture><source srcset="images/basket-added-img.webp" type="image/webp"><img src="images/basket-added-img.png" alt=""></picture>
+                            </div>
+                            <h3 class="basket-product__title">
+                                Морс лесные ягоды
+                            </h3>
+                        </div>
+                        <div class="basket-product__right">
+                            <div class="basket-product__price">
+                                700 руб.
+                            </div>
+                            <div class="button basket-added__button-add">
+                                Добавить
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket-product basket-added basket__added">
+                        <div class="basket-product__left">
+                            <div class="basket-product__img">
+                                <picture><source srcset="images/basket-added-img.webp" type="image/webp"><img src="images/basket-added-img.png" alt=""></picture>
+                            </div>
+                            <h3 class="basket-product__title">
+                                Морс лесные ягоды
+                            </h3>
+                        </div>
+                        <div class="basket-product__right">
+                            <div class="basket-product__price">
+                                700 руб.
+                            </div>
+                            <div class="button basket-added__button-add">
+                                Добавить
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="basket-bot basket__bot">
+                <div class="basket__text-block basket-bot__price">
+                    <p>
+                        4 товара
+                    </p>
+                    <p>
+                        3 450 руб.
+                    </p>
+                </div>
+                <div class="basket__text-block basket-bot__discount">
+                    <p>
+                        Персональная скидка 5%
+                    </p>
+                    <p>
+                        – 175,50 руб.
+                    </p>
+                </div>
+                <div class="basket__text-block basket-bot__result-price">
+                    <p>
+                        Сумма заказа
+                    </p>
+                    <p>
+                        3 274, 50 руб.
+                    </p>
+                </div>
+                <div class="basket-bot__button-row disablet">
+                    <p>
+                        Минимальная стоимость заказа 3 000 руб.
+                    </p>
+                    <div class="button gray basket-bot__button">
+                        Оформить заказ
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
     
 
 <div class="popup popup-products" data-popup="popup-products" data-close-overlay>
