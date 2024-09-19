@@ -1,0 +1,157 @@
+.making {
+    position: relative;
+    padding-top: rem(24);
+    @include adaptiveClamp(padding-bottom, 130, 100);
+    &__container {
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include adaptiveClamp(gap, 50, 20);
+        align-items: start;
+    }
+
+    &__left {
+    }
+
+    &__input-block {
+        margin-bottom: rem(50);
+    }
+
+    &__input-item {
+    }
+
+    &__title-input-block {
+        font-weight: 600;
+        @include adaptiveClamp(font-size, 22, 16);
+        @include adaptiveClamp(margin-bottom, 20, 16);
+        line-height: 120%;
+    }
+
+    &__radio-block {
+        margin-bottom: rem(50);
+    }
+
+    &__input-radio-item {
+    }
+
+    &__quantity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: rem(20);
+        @include adaptiveClamp(padding-top, 20, 15);
+        @include adaptiveClamp(padding-left, 30, 16);
+        @include adaptiveClamp(padding-bottom, 20, 15);
+        @include adaptiveClamp(padding-right, 30, 16);
+        box-shadow: 0 0 4px 0 rgba(13, 71, 51, 0.2);
+        background-color: var(--bg-card);
+        border-radius: 20px;
+        input {
+            color: var(--green-bl)
+        }
+        p {
+            @include adaptiveClamp(font-size, 18, 16);
+            font-weight: 600;
+            line-height: 120%;
+        }
+    }
+
+    &__input-block {
+    }
+
+    &__right {
+    }
+}
+
+
+
+
+.quantity {
+
+    &__row {
+    }
+
+    &__number-minus {
+    }
+
+    &__input {
+    }
+
+    &__number-plus {
+    }
+}
+
+
+
+.making {
+
+    &__right {
+    }
+}
+.making-right {
+    position: sticky;
+    top: rem(20);
+    
+    &__body {
+        display: block;
+        @include adaptiveClamp(padding, 30, 16);
+        border-radius: 20px;
+        box-shadow: 0 0 4px 0 rgba(13, 71, 51, 0.2);
+        background-color: var(--bg-card);
+        height: auto;
+    }
+
+    &__top {
+        padding-bottom: rem(10);
+        border-bottom: 1px solid var(--gray-bl);
+    }
+
+    &__title {
+        font-weight: 600;
+        @include adaptiveClamp(font-size, 22, 18);
+        line-height: 120%;
+        @include adaptiveClamp(margin-bottom, 20, 16);
+    }
+
+    &__text-block {
+        display: flex;
+        justify-content: space-between;
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+        p {
+            font-weight: 600;
+            line-height: 120%;
+            @include adaptiveClamp(font-size, 18, 16);
+            
+            &:first-child {
+                margin-right: auto;
+            }
+
+            &:last-child {
+                min-width: rem(120);
+                text-align: right;
+            }
+        }
+
+        &.orange {
+            @include adaptiveClamp(margin-bottom, 20, 16);
+            P {
+                color: var(--orange);
+            }
+        }
+        &.big {
+            @include adaptiveClamp(margin-top, 20, 16);
+            p {
+                @include adaptiveClamp(font-size, 22, 18);
+            }
+        }
+    }
+
+    &__bot {
+        @include adaptiveClamp(padding-top, 20, 16);
+    }
+}
+

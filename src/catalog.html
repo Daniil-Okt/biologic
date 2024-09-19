@@ -25,44 +25,61 @@
             <div class="catalog__menu-fixed catalog-menu-fixed">
                 <div class="catalog-menu-fixed__container">
                     <div class="catalog-top__menu catalog-menu">
-                        <div class="catalog-menu__row">
-                            <a href="#" class="catalog-menu__item">
-                                Закуски
-                            </a>
-                            <a href="#" class="catalog-menu__item active">
-                                Салаты
-                            </a>
-                            <a href="#" class="catalog-menu__item">
-                                Супы
-                            </a>
-                            <a href="#" class="catalog-menu__item">
-                                Гарниры
-                            </a>
-                            <a href="#" class="catalog-menu__item">
-                                Горячее
-                            </a>
-                            <div class="catalog-menu__item-all catalog-menu-item-all">
+                        <ul class="catalog-menu__row">
+                            <li>
+                                <a href="#" class="catalog-menu__item">
+                                    Закуски
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="catalog-menu__item active">
+                                    Салаты
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="catalog-menu__item">
+                                    Супы
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="catalog-menu__item">
+                                    Гарниры
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="catalog-menu__item">
+                                    Горячее
+                                </a>
+                            </li>
+                            
+                            <li class="catalog-menu__item-all catalog-menu-item-all">
                                     <span>Ещё</span>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30894 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733" />
                                     </svg>
 
                                 <div class="catalog-menu-item-all__body">
-                                    <div class="catalog-menu-item-all__row">
-                                        <a href="#" class="catalog-menu__item active">
-                                            Супы
-                                        </a>
-                                        <a href="#" class="catalog-menu__item">
-                                            Гарниры
-                                        </a>
-                                        <a href="#" class="catalog-menu__item">
-                                            Горячее
-                                        </a>
-                                    </div>
+                                    <ul class="catalog-menu-item-all__row">
+                                        <li>
+                                            <a href="#" class="catalog-menu__item active">
+                                                Супы
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="catalog-menu__item">
+                                                Гарниры
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="catalog-menu__item">
+                                                Горячее
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                                 
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                         
                     </div>
                 </div>
@@ -188,7 +205,7 @@
                                     <div class="catalog-card__price">
                                         700 руб.
                                     </div>
-                                    <div class="catalog-card__button button active">
+                                    <div class="catalog-card__button button active basket-open">
                                         <span>Убрать</span>
                                         Выбрать
                                     </div>
@@ -406,12 +423,12 @@
                     
                 </div>
             </div>
-
         </div>
+        
       </main>
 
     </div>
-
-    @@include('html/popup-example.html')
+    <!-- @@include('html/basket.html') -->
+    <!-- @@include('html/popup-example.html') -->
   </body>
 </html>

@@ -86,16 +86,17 @@
         // Firefox
         scrollbar-width: none;  
         scrollbar-color: transparent transparent; 
+        // WebKit (Chrome, Edge, Safari)
+        &::-webkit-scrollbar {  
+            display: none;  
+        }
         margin-right: rem(-16);
         padding-right: rem(16);
         padding-left: rem(2);
         margin-left: rem(-2);
         padding-top: rem(3);
         padding-bottom: rem(3);
-        // WebKit (Chrome, Edge, Safari)
-        &::-webkit-scrollbar {  
-            display: none;  
-        }
+        
     }
 
     &__button-type {

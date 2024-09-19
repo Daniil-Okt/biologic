@@ -72,7 +72,7 @@ new PopupManager();
 	* Для content аккардеона добавить класс "accordion__content"
 */
 // new Accordion('.accordion', {
-// 	shouldOpenAll: false, // true
+	// shouldOpenAll: false, // true
 // 	defaultOpen: [], // [0,1]
 // 	collapsedClass: 'open',
 // });
@@ -88,8 +88,8 @@ useDynamicAdapt()
 /* Маска для инпута tel =================================================================================
 	* Добавить класс tel к нужному инпуту 
 */
-// import { maskTel } from './modules/index.js'
-// maskTel()
+import { maskTel } from './modules/index.js'
+maskTel()
 
 /* Cкрыть меню при клике на его ссылки ==================================================================
 */
@@ -199,101 +199,6 @@ const popupProductsSlider = new Swiper('.popup-products__slider', {
 // const elementAll = document.querySelectorAll('.class');
 // toggleActiveClass(elementAll)
 
-const catalogMenuRows = document.querySelectorAll('.catalog-menu__row');
-
-catalogMenuRows.forEach(catalogMenuRow => {
-  let isDown = false;
-  let startX;
-  let scrollPos = 0; // Keeps track of the translateX position
-  let containerWidth = catalogMenuRow.parentElement.offsetWidth; // Width of the visible container
-  let contentWidth = catalogMenuRow.scrollWidth; // Width of the entire scrollable content
-  let maxScroll = contentWidth - containerWidth; // Maximum scroll distance (content width minus container width)
-
-  // Set the initial transform position
-  catalogMenuRow.style.transform = `translateX(0px)`; 
-
-  // Mouse Events
-  catalogMenuRow.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX;
-    catalogMenuRow.style.cursor = 'grabbing'; // Change cursor to indicate dragging
-  });
-
-  catalogMenuRow.addEventListener('mouseleave', () => {
-    isDown = false;
-    catalogMenuRow.style.cursor = 'grab';
-  });
-
-  catalogMenuRow.addEventListener('mouseup', () => {
-    isDown = false;
-    catalogMenuRow.style.cursor = 'grab';
-  });
-
-  catalogMenuRow.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX;
-    const moveBy = x - startX;
-    startX = x; // Update startX for continuous dragging
-    scrollPos += moveBy; // Update the translateX position
-
-    // Boundaries to prevent scrolling too far in either direction
-    if (scrollPos > 16) {
-      scrollPos = 16; // Prevent scrolling beyond left boundary (left side fully visible)
-    } else if (scrollPos < -maxScroll) {
-      scrollPos = -maxScroll; // Prevent scrolling beyond right boundary (right side fully visible)
-    }
-
-    catalogMenuRow.style.transform = `translateX(${scrollPos}px)`;
-  });
-
-  // Touch Events for mobile devices
-  catalogMenuRow.addEventListener('touchstart', (e) => {
-    isDown = true;
-    startX = e.touches[0].pageX;
-  });
-
-  catalogMenuRow.addEventListener('touchmove', (e) => {
-    if (!isDown) return;
-    const x = e.touches[0].pageX;
-    const moveBy = x - startX;
-    startX = x;
-    scrollPos += moveBy;
-
-    // Boundaries to prevent scrolling too far in either direction
-    if (scrollPos > 16) {
-      scrollPos = 16; // Prevent scrolling beyond left boundary
-    } else if (scrollPos < -maxScroll) {
-      scrollPos = -maxScroll; // Prevent scrolling beyond right boundary
-    }
-
-    catalogMenuRow.style.transform = `translateX(${scrollPos}px)`;
-  });
-
-  catalogMenuRow.addEventListener('touchend', () => {
-    isDown = false;
-  });
-
-  // Recalculate boundaries if window is resized
-  window.addEventListener('resize', () => {
-    containerWidth = catalogMenuRow.parentElement.offsetWidth;
-    contentWidth = catalogMenuRow.scrollWidth;
-    maxScroll = contentWidth - containerWidth; // Update max scroll when window is resized
-  });
-});
-
-const catalogMenuFixed = document.querySelector('.catalog__menu-fixed');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) {
-    catalogMenuFixed.classList.add('active');
-  } else {
-    catalogMenuFixed.classList.remove('active');
-  }
-});
-
-
-
 
 //добавление в number
 document.addEventListener("DOMContentLoaded", function () {
@@ -330,3 +235,98 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
   });
   
+
+  //открытие/закрытие корзины
+//   const basketOpenAll = document.querySelectorAll('.basket-open')
+//   if (basketOpenAll.length > 0 && document.querySelector('.basket')) {
+// 	basketOpenAll.forEach(button => {
+// 		button.addEventListener('click', () => {
+// 			document.querySelector('.basket').classList.add('open')
+// 			document.documentElement.classList.add('lock')
+// 		})
+// 	});
+//   }
+
+//   const basketCloseAll = document.querySelectorAll('.basket-close')
+//   if (basketCloseAll.length > 0 && document.querySelector('.basket')) {
+// 	basketCloseAll.forEach(button => {
+// 		button.addEventListener('click', () => {
+// 			document.querySelector('.basket').classList.remove('open')
+// 			document.documentElement.classList.remove('lock')
+// 		})
+// 	});
+//   }
+
+//   const basket = document.querySelector('.basket')
+//   const basketContent = document.querySelector('.basket__content')
+// 	if (basket) {
+// 		basket.addEventListener('click', function(event) {
+// 			if (!basketContent.contains(event.target)) {
+// 				basket.classList.remove('open')
+// 				document.documentElement.classList.remove('lock')
+// 			}
+// 	});
+	// }
+
+
+
+
+
+//select
+document.addEventListener('DOMContentLoaded', function() {
+	const selectHeads = document.querySelectorAll('.select__head');
+	const selectItems = document.querySelectorAll('.select__item');
+	selectHeads.forEach(function(selectHead) {
+	  selectHead.addEventListener('click', function() {
+		if (selectHead.classList.contains('open')) {
+		  selectHead.classList.remove('open');
+		  selectHead.nextElementSibling.classList.remove('open');
+		} else {
+		  selectHeads.forEach(function(head) {
+			head.classList.remove('open');
+			head.nextElementSibling.classList.remove('open');
+		  });
+		  selectHead.classList.add('open');
+		  selectHead.nextElementSibling.classList.add('open');
+		}
+	  });
+	});
+
+	selectItems.forEach(function(selectItem) {
+	  selectItem.addEventListener('click', function() {
+		selectHeads.forEach(function(head) {
+		  if (head.classList.contains('open')) {
+			selectItems.forEach(item  => {
+			  if (item.classList.contains('open')) {
+				item.classList.remove('open')
+			  }
+			})
+			head.classList.remove('open');
+			head.nextElementSibling.classList.remove('open');
+			selectItem.classList.add('open');
+			selectItem.parentElement.classList.remove('open');
+			selectItem.parentElement.parentElement.previousElementSibling.textContent = selectItem.textContent;
+			selectItem.parentElement.parentElement.previousElementSibling.classList.add('select-active');
+			selectItem.parentElement.parentElement.previousElementSibling.previousElementSibling.value = selectItem.textContent;
+		  }
+		  
+		});
+		
+	  });
+	});
+  
+	document.addEventListener('click', function(e) {
+	  if (!e.target.closest('.select')) {
+		selectHeads.forEach(function(head) {
+		  if (head.classList.contains('open')) {
+			head.classList.remove('open');
+			head.nextElementSibling.classList.remove('open');
+		  } else {
+			// head.classList.remove('open');
+			// head.nextElementSibling.classList.remove('open');
+		}
+		  
+		});
+	  }
+	});
+  });

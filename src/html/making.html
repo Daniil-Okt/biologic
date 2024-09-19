@@ -1,0 +1,232 @@
+<div class="making">
+    <div class="making__container">
+        <div class="making__row">
+            <div class="making__left">
+                <div class="making__input-block input-block">
+                    <div class="making__input-item input-item">
+                        <label class="input-item__label">
+                            Фамилия Имя Отчество
+                        </label>
+                        <input type="text" name="name" class="input-item__input text">
+                    </div>
+                    <div class="making__input-item input-item">
+                        <label class="input-item__label">
+                            Номер телефона
+                        </label>
+                        <input type="text" name="phone" placeholder="+ 7 (___) ___-__-__" class="input-item__input text _tel">
+                    </div>
+                </div>
+                <h3 class="making__title-input-block">
+                    Выберите способ получения заказа
+                </h3>
+                <div class="making__radio-block radio-block">
+                    <div class="making__input-radio-item input-radio-item">
+                        <input type="radio" id="delivery1" name="delivery" class="input-radio-item__input">
+                        <label for="delivery1" class="input-radio-item__label">
+                            <span class="input-radio-item__circle"></span>
+                            <span>Доставка</span>
+                        </label>
+                    </div>
+                    <div class="making__input-radio-item input-radio-item">
+                        <input checked type="radio" id="delivery2" name="delivery" class="input-radio-item__input">
+                        <label for="delivery2" class="input-radio-item__label">
+                            <span class="input-radio-item__circle"></span>
+                            <span>Самовывоз</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="making__input-block input-block">
+                    <div class="making__input-item input-item">
+                        <label class="input-item__label">
+                            Адрес доставки
+                        </label>
+                        <input type="text" name="adress" placeholder="Адрес доставки" class="input-item__input text">
+                    </div>
+                </div>
+                <h3 class="making__title-input-block">
+                    Выберите тип упаковки
+                </h3>
+                <div class="making__radio-block radio-block">
+                    <div class="making__input-radio-item input-radio-item">
+                        <input checked type="radio" id="packaging1" name="packaging" class="input-radio-item__input">
+                        <label for="packaging1" class="input-radio-item__label">
+                            <span class="input-radio-item__circle"></span>
+                            <span>Духовой шкаф</span>
+                        </label>
+                    </div>
+                    <div class="making__input-radio-item input-radio-item">
+                        <input type="radio" id="packaging2" name="packaging" class="input-radio-item__input">
+                        <label for="packaging2" class="input-radio-item__label">
+                            <span class="input-radio-item__circle"></span>
+                            <span>Микроволновая печь</span>
+                        </label>
+                    </div>
+                    <div class="making__input-radio-item input-radio-item">
+                        <input type="radio" id="packaging3" name="packaging" class="input-radio-item__input">
+                        <label for="packaging3" class="input-radio-item__label">
+                            <span class="input-radio-item__circle"></span>
+                            <span>В своей посуде</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="making__input-block input-block two">
+                    <div class="making__input-item input-item">
+                        <label class="input-item__label input-item__label-big">
+                            Дата доставки
+                        </label>
+                        <input type="text" name="data" placeholder="Выберите дату доставки" class="input-item__input text">
+                    </div>
+                    <div class="making__input-item input-item ">
+                        <label class="input-item__label input-item__label-big input-item__label-hint">
+                            <span>Время доставки</span>
+                            <div class="input-item__label-hint-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 15H11V9H9V15ZM10 7C10.2833 7 10.5208 6.90417 10.7125 6.7125C10.9042 6.52083 11 6.28333 11 6C11 5.71667 10.9042 5.47917 10.7125 5.2875C10.5208 5.09583 10.2833 5 10 5C9.71667 5 9.47917 5.09583 9.2875 5.2875C9.09583 5.47917 9 5.71667 9 6C9 6.28333 9.09583 6.52083 9.2875 6.7125C9.47917 6.90417 9.71667 7 10 7ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18Z" fill="#E08B2F" />
+                                </svg>
+                                <p class="input-item__label-hint-text">
+                                    Подсказка подсказка
+                                </p>
+                            </div>
+                           
+                        </label>
+
+                        <div class="inquiry__select select">
+                            <input class="select__input" placeholder="time" placeholder="Выберите время доставки" type="hidden" name="time">
+                            <div class="select__head">Выберите время доставки</div>
+                            <div class="select__list">
+                                <ul class="select__row">
+                                    <li class="select__item">15:00 — 16:00</li>
+                                    <li class="select__item">16:00 — 17:00</li>
+                                    <li class="select__item">18:00 — 19:00</li>
+                                    <li class="select__item">20:00 — 21:00</li>
+                                    <li class="select__item">21:00 — 22:00</li>
+                                    <li class="select__item">22:00 — 23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="making__input-block">
+                    <div class="making__quantity">
+                        <p>
+                            Количество приборов
+                        </p>
+                        <div class="quantity">
+                            <div class="quantity__row">
+                                <button class="quantity__number-minus" type="button">
+                                    -
+                                </button>
+                                <input type="number" min="1" value="1" readonly class="quantity__input">
+                                <button class="quantity__number-plus" type="button">
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="making__title-input-block">
+                    Вы можете оставить Комментарий
+                </h3>
+                <div class="making__input-block input-block>">
+                    <div class="making__input-item input-item">
+                        <label class="input-item__label input-item__label-textarea">
+                            Если у Вас есть аллергия, непереносимость каких-либо продуктов, пожалуйста, сообщите обязательно нам об этом. Мы предложим Вам варианты, которые будут соответствовать вашим вкусам с учетом комментария
+                        </label>
+                        <textarea name="text" placeholder="Комментарий"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="making__right making-right">
+                <div class="making-right__body">
+                    <div class="making-right__top">
+                        <h3 class="making-right__title">
+                            Состав заказа
+                        </h3>
+                        <div class="making-right__text-block ">
+                            <p>
+                                Салат с тунцом
+                            </p>
+                            <p>
+                                1
+                            </p>
+                            <p>
+                                700 руб.
+                            </p>
+                        </div>
+                        <div class="making-right__text-block ">
+                            <p>
+                                Салат Табуле
+                            </p>
+                            <p>
+                                2
+                            </p>
+                            <p>
+                                1 300 руб.
+                            </p>
+                        </div>
+                        <div class="making-right__text-block ">
+                            <p>
+                                Салат с рыбой и авокадо
+                            </p>
+                            <p>
+                                1
+                            </p>
+                            <p>
+                                750 руб.
+                            </p>
+                        </div>
+                        <div class="making-right__text-block ">
+                            <p>
+                                Количество приборов
+                            </p>
+                            <p>
+                                2
+                            </p>
+                            <p>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="making-right__bot">
+                        <div class="making-right__text-block ">
+                            <p>
+                                4 товара
+                            </p>
+                            <p>
+                                3 450 руб.
+                            </p>
+                        </div>
+                        <div class="making-right__text-block orange">
+                            <p>
+                                Персональная скидка 5%
+                            </p>
+                            <p>
+                                – 175,50 руб.
+                            </p>
+                        </div>
+                        <div class="making-right__text-block ">
+                            <p>
+                                Доставка
+                            </p>
+                            <p>
+                                400 руб.
+                            </p>
+                        </div>
+                        <div class="making-right__text-block big">
+                            <p>
+                                Сумма заказа
+                            </p>
+                            <p>
+                                3 674, 50 руб.
+                            </p>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
