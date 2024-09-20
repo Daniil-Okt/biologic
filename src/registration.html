@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Регистрация'
+  })
+  <body>
+    <div class="wrapper">
+      <!-- @@include('html/header.html') -->
+
+      <main class="page form-page">
+        <div class="form">
+            <div class="form__container">
+                <div class="form__content">
+                    <form action="#" class="form__body">
+                        <h2 class="form__title">
+                            Регистрация
+                        </h2>
+
+                        
+                        
+                        <p class="form__sub-text">
+                            Заполните ваши данные что бы 
+                            <br/>зарегистрироваться в личный кабенет
+                        </p>
+                        <div class="form__input-row">
+                            <div class="making__input-item input-item">
+                                <label class="input-item__label">
+                                    Введите логин
+                                </label>
+                                <input type="text" placeholder="Введите логин" name="login" class="input-item__input text">
+                            </div>
+                            <div class="making__input-item input-item">
+                                <label class="input-item__label">
+                                    Введите E-mail
+                                </label>
+                                <input type="text" placeholder="Введите E-mail" name="email" class="input-item__input text">
+                            </div>
+                            <div class="making__input-item input-item">
+                                <label class="input-item__label">
+                                    Введите пароль
+                                </label>
+                                <input type="password" placeholder="Введите пароль" name="password" class="input-item__input text">
+                            </div>
+                            <div class="making__input-item input-item">
+                                <label class="input-item__label">
+                                    Подтвердите пароль
+                                </label>
+                                <input type="text" placeholder="Подтвердите пароль" name="password-two" class="input-item__input text">
+                            </div>
+                        </div>
+                        <button class="form__button button gray">
+                            Зарегистрироваться
+                        </button>
+                        <div class="form__politic">
+                            Нажимая кнопку, вы подтверждаете свое согласие на обработку <a href="#">Персональных данных</a>
+                        </div>
+                        <div class="form__bot">
+                            <p>
+                                У вас уже есть аккаунт?
+                            </p>
+                            <a href="#">
+                                Вход
+                            </a>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+      </main>
+
+      <!-- @@include('html/footer.html') -->
+    </div>
+
+    <!-- @@include('html/popup-example.html') -->
+  </body>
+</html>

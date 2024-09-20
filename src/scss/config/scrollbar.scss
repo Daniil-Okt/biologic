@@ -1,27 +1,26 @@
-// Firefox
+/* Firefox */
 * {
-  scrollbar-width: rem(8);
-  scrollbar-color: var(--primary-color) #d6d6d6;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(13, 71, 51, 1) #d6d6d6; /* Зеленый цвет для ползунка и серый для фона */
 
-  // Chrome, Edge, and Safari
+  /* Chrome, Edge, Safari */
   &::-webkit-scrollbar {
-    width: rem(8);
-    background-color: var(--white-color);
+    width: 8px; /* Ширина скроллбара */
+    background-color: #d6d6d6; /* Цвет фона */
   }
 
   &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 rem(6) rgba(#000, 20%);
-    border-radius: rem(4);
-    background: #eee;
+    background: #eee; /* Цвет фона трека */
+    box-shadow: inset 0 0 6px rgba(13, 71, 51, 1); /* Тень внутри трека */
+    border-radius: 10px; /* Скругленные углы трека */
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: rem(4);
-    border: 0 none #fff;
-    background-color: var(--primary-color);
+    background-color: rgba(13, 71, 51, 1); /* Зеленый цвет для ползунка */
+    border-radius: 10px; /* Скругление ползунка */
 
     &:hover {
-      background-color: var(--primary-hover-color);
+      background-color: rgba(13, 71, 51, 1); /* Зеленый цвет при наведении */
     }
   }
 }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Регистрация'
+  })
+  <body>
+    <div class="wrapper">
+      <!-- @@include('html/header.html') -->
+
+      <main class="page form-page">
+        <div class="crumbs">
+            <div class="crumbs__container">
+                <div class="crumbs__row">
+                    <a href="#">
+                        Главная
+                    </a>
+                    <div class="crumbs__line"></div>
+                    <a href="#" class="active">
+                        О нас
+                    </a>
+                </div>
+            </div>
+        </div>
+        @@include('html/about-page/about.html')
+        @@include('html/about-page/wealth.html')
+        
+        <div class="about about-two">
+            <div class="about__container">
+                <div class="about__row-two about-row-two about-row-three">
+                    <div class="about-row-two__body">
+                        <h2 class="title-block">
+                            Экология и здоровье 
+                            <br/><b>—  выбор для лучшего будущего</b>
+                        </h2>
+                        <ul class="about-row-two__list">
+                            <li class="about-row-two__item">
+                                <svg class="about-row-two__circle" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6" cy="6" r="6" fill="#E08B2F" />
+                                </svg>
+                                <p>
+                                    Используя только перерабатываемые материалы и следуя принципам устойчивого развития, мы минимизируем наш экологический след и заботимся о планете
+                                </p>
+                            </li>
+                            <li class="about-row-two__item">
+                                <svg class="about-row-two__circle" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6" cy="6" r="6" fill="#E08B2F" />
+                                </svg>
+                                <p>
+                                    Мы стремимся делать знания о правильном и лечебном питании доступными для всех, предоставляя материалы, разработанные экспертами, чтобы помочь вам делать осознанный выбор в пользу здоровья
+                                </p>
+                            </li>
+                            <li class="about-row-two__item">
+                                <svg class="about-row-two__circle" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6" cy="6" r="6" fill="#E08B2F" />
+                                </svg>
+                                <p>
+                                    Мы за создание устойчивого будущего, где каждый может жить в гармонии с окружающей средой и собственным телом
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about-row-two__img">
+                        <img src="@img/about/about-row-one-img3.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        @@include('html/about-page/team.html')
+        
+      </main>
+
+      <!-- @@include('html/footer.html') -->
+    </div>
+
+    @@include('html/popup-example.html')
+  </body>
+</html>

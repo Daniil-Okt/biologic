@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Регистрация'
+  })
+  <body>
+    <div class="wrapper">
+      <!-- @@include('html/header.html') -->
+
+      <main class="page form-page">
+        <div class="form entrance">
+            <div class="form__container">
+                <div class="form__content">
+                    <form action="#" class="form__body">
+                        <h2 class="form__title">
+                            Вход в личный кабинет
+                        </h2>
+                        <p class="form__sub-text">
+                            Добавьте адрес и пищевые ограничения, чтобы заказы соответствовали вашим предпочтениям
+                        </p>
+                        <div class="form__input-row">
+                            <div class="making__input-item input-item">
+                                <label class="input-item__label">
+                                    Введите E-mail
+                                </label>
+                                <input type="text" placeholder="Введите E-mail" name="email" class="input-item__input text">
+                            </div>
+                            <div class="making__input-item input-item">
+                                <label class="input-item__label">
+                                    Введите пароль
+                                </label>
+                                <input type="password" placeholder="Введите пароль" name="password" class="input-item__input text">
+                                <a href="#" class="input-item__sub">Забыли пароль?</a>
+                            </div>
+                        </div>
+                        <button class="form__button button gray">
+                            Войти
+                        </button>
+                        <div class="form__politic">
+                            Нажимая кнопку, вы подтверждаете свое согласие на обработку <a href="#">Персональных данных</a>
+                        </div>
+                        <div class="form__bot">
+                            <p>
+                                У вас нет аккаунта?
+                            </p>
+                            <a href="#">
+                                Регистрация
+                            </a>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+      </main>
+
+      <!-- @@include('html/footer.html') -->
+    </div>
+
+    <!-- @@include('html/example.html') -->
+  </body>
+</html>

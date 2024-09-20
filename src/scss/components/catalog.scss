@@ -48,12 +48,6 @@
     }
 
     &__product {
-        &:last-child {
-            margin-top: rem(-40);
-            @media(max-width:1150px){
-                margin-top: rem(32);
-            }
-        }
         @include adaptiveClamp(margin-bottom, 130, 100);
     }
 }
@@ -63,7 +57,7 @@
     align-items: center;
     justify-content: space-between;
 
-    gap: rem(32);
+    column-gap: rem(32);
 
     @media(max-width:1150px){
 
@@ -73,6 +67,8 @@
     &__left {
         // overflow: hidden;
         max-width: 100%;
+        margin-top: rem(32);
+        margin-bottom: rem(32);
     }
 
     &__button-row {
@@ -160,7 +156,7 @@
         // overflow-x: auto;
         // overflow-y: visible;
         // overflow: auto;
-        @include adaptiveClamp(gap, 30, 16);
+        // @include adaptiveClamp(gap, 30, 16);
 
         // Firefox
         scrollbar-width: none;  
@@ -180,6 +176,7 @@
         line-height: 120%;
         transition: all 0.3s ease  0s;
         color: var(--gray-bl);
+        @include adaptiveClamp(margin-right, 30, 16);
         // flex-basis:auto;
         // flex-shrink: 0;
         &.active {
@@ -273,7 +270,8 @@
     box-shadow: 0 0 2px rgba(13, 71, 51, 0.5);
     border-radius: 20px;
     @include adaptiveClamp(padding, 20, 16);
-
+    display: block;
+    
     @media(max-width:520px){
         width: 100%;
         min-width: 100%;
@@ -284,7 +282,7 @@
         font-weight: 600;
         @include adaptiveClamp(font-size, 18, 16);
         line-height: 120%;
-        @include adaptiveClamp(margin-bottom, 5, 0);
+        margin-bottom: rem(5);
     }
 
     &__text {

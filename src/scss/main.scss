@@ -45,15 +45,21 @@
 */
 @import 'components/popup';
 // @import 'components/checkbox';
-// @import 'components/tabs';
+@import 'components/tabs';
 // @import 'components/accordion';
 /**
 * Подключение стилей отдельных блоков и секций
 */
-@import 'components/header';
+// @import 'components/header';
 @import 'components/catalog';
 @import 'components/basket';
 @import 'components/making';
+@import 'components/office';
+@import 'components/form';
+@import 'components/about-page/about';
+@import 'components/about-page/wealth';
+@import 'components/about-page/team';
 
 
 // @import 'components/footer';
+
