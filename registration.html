@@ -1,16 +1,85 @@
 <!doctype html>
 <html lang="ru">
   <head>
-  <style>html { opacity: 0; }</style>
+  <style>
+    .preload {
+      position:fixed; 
+      background-color:rgba(219, 221, 206, 1);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: opacity 0.8s ease-in-out 1.5s;
+      
+    }
+    .preload__body {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 100px;
+      max-width: 700px;
+      width: 100%;
+      margin-right: 40px;
+      margin-left: 40px;
+    }
+    .loader-bar {
+            position: relative;
+            height: 1px;
+            background-color: rgba(157, 176, 159, 1);
+            border-radius: 5px;
+
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .loader-progress {
+            position: relative;
+            width: 0;
+            height: 100%;
+            height: 6px;
+            margin-top: -2px;
+
+            background-color: rgba(13, 71, 51, 1);
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+    @media(max-width:1024px){
+      .preload__body {
+        gap: 70px;
+      }
+      .preload__body  svg {
+        width: 300px;
+        height: auto;
+      }
+    }
+    @media(max-width:680px){
+      .preload__body {
+        gap: 50px;
+      }
+      .preload__body  svg {
+        width: 215px;
+        height: auto;
+      }
+      .loader-progress {
+        height: 3px;
+        margin-top: -1px;
+      }
+    }
+  </style>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Регистрация</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20240923155038">
+  <link rel="stylesheet" href="css/main.min.css?_v=20240926154116">
 
-  <script defer="defer" src="js/main.min.js?_v=20240923155038"></script>
+  <script defer="defer" src="js/main.min.js?_v=20240926154116"></script>
 </head>
 
   <body>

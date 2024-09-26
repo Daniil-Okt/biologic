@@ -1,16 +1,85 @@
 <!doctype html>
 <html lang="ru">
   <head>
-  <style>html { opacity: 0; }</style>
+  <style>
+    .preload {
+      position:fixed; 
+      background-color:rgba(219, 221, 206, 1);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: opacity 0.8s ease-in-out 1.5s;
+      
+    }
+    .preload__body {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 100px;
+      max-width: 700px;
+      width: 100%;
+      margin-right: 40px;
+      margin-left: 40px;
+    }
+    .loader-bar {
+            position: relative;
+            height: 1px;
+            background-color: rgba(157, 176, 159, 1);
+            border-radius: 5px;
+
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .loader-progress {
+            position: relative;
+            width: 0;
+            height: 100%;
+            height: 6px;
+            margin-top: -2px;
+
+            background-color: rgba(13, 71, 51, 1);
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+    @media(max-width:1024px){
+      .preload__body {
+        gap: 70px;
+      }
+      .preload__body  svg {
+        width: 300px;
+        height: auto;
+      }
+    }
+    @media(max-width:680px){
+      .preload__body {
+        gap: 50px;
+      }
+      .preload__body  svg {
+        width: 215px;
+        height: auto;
+      }
+      .loader-progress {
+        height: 3px;
+        margin-top: -1px;
+      }
+    }
+  </style>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Личный кабинет</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20240923155038">
+  <link rel="stylesheet" href="css/main.min.css?_v=20240926154116">
 
-  <script defer="defer" src="js/main.min.js?_v=20240923155038"></script>
+  <script defer="defer" src="js/main.min.js?_v=20240926154116"></script>
 </head>
 
   <body>
@@ -83,13 +152,13 @@
                             <label class="input-item__label">
                                 Фамилия Имя Отчество
                             </label>
-                            <input type="text" placeholder="Фамилия Имя Отчество" name="name" class="input-item__input text">
+                            <input type="text" placeholder="Фамилия Имя Отчество" name="name" class="text input-item__input">
                         </div>
                         <div class="input-item making__input-item">
                             <label class="input-item__label">
                                 Номер телефона
                             </label>
-                            <input type="text" value="+ 7 (678) 588-43-43" placeholder="+ 7 (___) ___-__-__" name="phone" class="input-item__input text tel">
+                            <input type="text" value="+ 7 (678) 588-43-43" placeholder="+ 7 (___) ___-__-__" name="phone" class="text input-item__input tel">
                         </div>
                         <div class="input-item making__input-item">
                             <label class="input-item__label input-item__label-hint">
@@ -110,7 +179,7 @@
                                     </div>
                                 </div>
                             </label>
-                            <input type="date" placeholder="Введите дату рождения" name="date-birth" class="input-item__input text">
+                            <input type="date" placeholder="Введите дату рождения" name="date-birth" class="text input-item__input">
                         </div>
                         <div class="input-item making__input-item">
                             <label class="input-item__label input-item__label-hint">
@@ -166,7 +235,7 @@
                                 </div>
                             </div>
                             <div class="input-item making__input-item">
-                                <input type="text" placeholder="Если есть, какой у вас питомец?" name="which-pet" class="input-item__input text">
+                                <input type="text" placeholder="Если есть, какой у вас питомец?" name="which-pet" class="text input-item__input">
                             </div>
                         </div>
                         
@@ -243,18 +312,64 @@
                             </div>
                         </div>
                         <div class="office-address__row">
-                            <div class="input-item__label office-address__title-row">
-                                Или введите новый
-                            </div>
+                            <div class="button white office-address__button-add">
+                                <span>+</span> Добавить адресс
+                            </div>  
                             <div class="office-address__row-three">
                                 <div class="input-item making__input-item">
-                                    <input type="text" placeholder="Улица" name="address" class="input-item__input text">
+                                    <div class="office-address-input">
+                                        <input type="text" name="address-street" placeholder="Улица/Переулок" class="text office-address-input__input">
+                                        <div class="hint-office-address office-address-input__hint open">
+                                            <ul class="hint-office-address__hint-list">
+                                                <li href="#" class="hint-office-address__item">
+                                                    Улица улица улица улица
+                                                </li>
+                                                <li href="#" class="hint-office-address__item">
+                                                    Улица улица улица улица
+                                                </li>
+                                                <li href="#" class="hint-office-address__item">
+                                                    Улица улица улица улица
+                                                </li>
+                                                <li href="#" class="hint-office-address__item">
+                                                    Улица улица улица улица
+                                                </li>
+                                                <li href="#" class="hint-office-address__item">
+                                                    Улица улица улица улица
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="office-address__row-two">
+                                    <div class="input-item making__input-item">
+                                        <input type="text" placeholder="Строение" name="address-building" class="text input-item__input">
+                                    </div>
+                                    <div class="input-item making__input-item">
+                                        <input type="text" placeholder="Дом" name="address-home" class="text input-item__input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="office-address__row-two">
+                                <div class="input-item making__input-item">
+                                    <input type="text" placeholder="Квартира" name="address-flat" class="text input-item__input">
                                 </div>
                                 <div class="input-item making__input-item">
-                                    <input type="text" placeholder="Дом" name="address" class="input-item__input text">
+                                    <input type="text" placeholder="Этаж" name="address-floor" class="text input-item__input">
                                 </div>
                                 <div class="input-item making__input-item">
-                                    <input type="text" placeholder="Кв." name="address" class="input-item__input text">
+                                    <input type="text" placeholder="Подъезд" name="address-entrance" class="text input-item__input">
+                                </div>
+                                <div class="input-item making__input-item">
+                                    <input type="text" placeholder="Домофон" name="address-intercom" class="text input-item__input">
+                                </div>
+                            </div>
+                            <div class="making__radio-block radio-block">
+                                <div class="input-radio-item making__input-radio-item">
+                                    <input type="checkbox" id="address-main" name="address-main" class="input-radio-item__input">
+                                    <label for="address-main" class="input-radio-item__label">
+                                        <span class="input-radio-item__circle"></span>
+                                        <span>Cделать основным</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -270,13 +385,13 @@
                                 <label class="input-item__label">
                                     Пароль
                                 </label>
-                                <input type="text" placeholder="Введите новый пароль" name="password" class="input-item__input text">
+                                <input type="text" placeholder="Введите новый пароль" name="password" class="text input-item__input">
                             </div>
                             <div class="input-item making__input-item">
                                 <label class="input-item__label">
                                     Повторите пароль
                                 </label>
-                                <input type="text" placeholder="Повторите пароль" name="password-two" class="input-item__input text">
+                                <input type="text" placeholder="Повторите пароль" name="password-two" class="text input-item__input">
                             </div>
                         </div>
                     </div>
@@ -314,10 +429,10 @@
                                     <div class="office-panel-head office-panel__head">
                                         <div class="office-panel-head__row">
                                             <div class="office-panel__title office-panel-head__number">
-                                                Заказ №76
+                                                Заказ №236
                                             </div>
                                             <div class="office-panel__sub-text office-panel-head__date">
-                                                10 июля 2024 г. в 15:00
+                                                08 июля 2024 г. в 16:00
                                             </div>
                                         </div>
                                         <div class="office-panel-head__icon">
@@ -327,92 +442,238 @@
                                         </div>
                                     </div>
                                     <div class="office-panel__body">
-                                        <div class="office-panel__item">
-                                            <div class="office-panel__text-block">
-                                                <div class="office-panel__title">
-                                                    Доставка
+                                        <div class="office-panel__body-row">
+                                            <div class="office-panel__item">
+                                                <div class="office-panel__text-block">
+                                                    <div class="office-panel__title">
+                                                        Доставка
+                                                    </div>
+                                                    <div class="office-panel__sub-text">
+                                                        Москва, улица Ленина, 20-11
+                                                    </div>
                                                 </div>
-                                                <div class="office-panel__sub-text">
-                                                    Москва, улица Ленина, 20-11
+                                                <div class="office-panel__text-block">
+                                                    <div class="office-panel__title">
+                                                        Время доставки
+                                                    </div>
+                                                    <div class="office-panel__sub-text">
+                                                        Ежедневно
+                                                    </div>
+                                                    <div class="office-panel__sub-text">
+                                                        16:00 — 17:00
+                                                    </div>
+                                                </div>
+                                                <div class="office-panel__text-block">
+                                                    <div class="office-panel__title">
+                                                        Сумма заказа
+                                                    </div>
+                                                    <div class="office-panel__sub-text office-panel-sum office-panel__sum">
+                                                        <p>65 500 руб.</p>
+                                                        <div class="office-panel-sum__check">
+                                                            <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M3 20C2.16667 20 1.45833 19.7083 0.875 19.125C0.291667 18.5417 0 17.8333 0 17V14H3V0L4.5 1.5L6 0L7.5 1.5L9 0L10.5 1.5L12 0L13.5 1.5L15 0L16.5 1.5L18 0V17C18 17.8333 17.7083 18.5417 17.125 19.125C16.5417 19.7083 15.8333 20 15 20H3ZM15 18C15.2833 18 15.5208 17.9042 15.7125 17.7125C15.9042 17.5208 16 17.2833 16 17V3H5V14H14V17C14 17.2833 14.0958 17.5208 14.2875 17.7125C14.4792 17.9042 14.7167 18 15 18ZM6 7V5H12V7H6ZM6 10V8H12V10H6ZM14 7C13.7167 7 13.4792 6.90417 13.2875 6.7125C13.0958 6.52083 13 6.28333 13 6C13 5.71667 13.0958 5.47917 13.2875 5.2875C13.4792 5.09583 13.7167 5 14 5C14.2833 5 14.5208 5.09583 14.7125 5.2875C14.9042 5.47917 15 5.71667 15 6C15 6.28333 14.9042 6.52083 14.7125 6.7125C14.5208 6.90417 14.2833 7 14 7ZM14 10C13.7167 10 13.4792 9.90417 13.2875 9.7125C13.0958 9.52083 13 9.28333 13 9C13 8.71667 13.0958 8.47917 13.2875 8.2875C13.4792 8.09583 13.7167 8 14 8C14.2833 8 14.5208 8.09583 14.7125 8.2875C14.9042 8.47917 15 8.71667 15 9C15 9.28333 14.9042 9.52083 14.7125 9.7125C14.5208 9.90417 14.2833 10 14 10ZM3 18H12V16H2V17C2 17.2833 2.09583 17.5208 2.2875 17.7125C2.47917 17.9042 2.71667 18 3 18Z" fill="#0D4733"/>
+                                                            </svg>
+                                                            <p>
+                                                                Чек
+                                                            </p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="office-panel__text-block">
-                                                <div class="office-panel__title">
-                                                    Время доставки
-                                                </div>
-                                                <div class="office-panel__sub-text">
-                                                    11 июля
-                                                </div>
-                                                <div class="office-panel__sub-text">
-                                                    16:00 — 17:00
-                                                </div>
+                                            <div class="office-panel__item">
+                                                    <div class="office-panel__text-block">
+                                                        <div class="office-panel__title">
+                                                            Диета
+                                                        </div>
+                                                        <div class="office-panel__sub-text">
+                                                            Гепатоз
+                                                        </div>
+                                                    </div>
+                                                    <div class="office-panel__text-block">
+                                                        <div class="office-panel__title">
+                                                            Начало диеты
+                                                        </div>
+                                                        <div class="office-panel__sub-text">
+                                                            13 июля, ср.
+                                                        </div>
+                                                    </div>
+                                                    <div class="office-panel__text-block">
+                                                        <div class="office-panel__title">
+                                                            Завершение диеты
+                                                        </div>
+                                                        <div class="office-panel__sub-text">
+                                                            23 июля, вт.
+                                                        </div>
+                                                    </div>
+                                                    <div class="office-panel__text-block">
+                                                        <div class="office-panel__title">
+                                                            Количество дней
+                                                        </div>
+                                                        <div class="office-panel__sub-text">
+                                                            14 дней
+                                                        </div>
+                                                    </div>
                                             </div>
-                                            <div class="office-panel__text-block">
-                                                <div class="office-panel__title">
-                                                    Сумма заказа
-                                                </div>
-                                                <div class="office-panel__sub-text office-panel-sum office-panel__sum">
-                                                    <p>4 500 руб.</p>
-                                                    <div class="office-panel-sum__check">
-                                                        <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M3 20C2.16667 20 1.45833 19.7083 0.875 19.125C0.291667 18.5417 0 17.8333 0 17V14H3V0L4.5 1.5L6 0L7.5 1.5L9 0L10.5 1.5L12 0L13.5 1.5L15 0L16.5 1.5L18 0V17C18 17.8333 17.7083 18.5417 17.125 19.125C16.5417 19.7083 15.8333 20 15 20H3ZM15 18C15.2833 18 15.5208 17.9042 15.7125 17.7125C15.9042 17.5208 16 17.2833 16 17V3H5V14H14V17C14 17.2833 14.0958 17.5208 14.2875 17.7125C14.4792 17.9042 14.7167 18 15 18ZM6 7V5H12V7H6ZM6 10V8H12V10H6ZM14 7C13.7167 7 13.4792 6.90417 13.2875 6.7125C13.0958 6.52083 13 6.28333 13 6C13 5.71667 13.0958 5.47917 13.2875 5.2875C13.4792 5.09583 13.7167 5 14 5C14.2833 5 14.5208 5.09583 14.7125 5.2875C14.9042 5.47917 15 5.71667 15 6C15 6.28333 14.9042 6.52083 14.7125 6.7125C14.5208 6.90417 14.2833 7 14 7ZM14 10C13.7167 10 13.4792 9.90417 13.2875 9.7125C13.0958 9.52083 13 9.28333 13 9C13 8.71667 13.0958 8.47917 13.2875 8.2875C13.4792 8.09583 13.7167 8 14 8C14.2833 8 14.5208 8.09583 14.7125 8.2875C14.9042 8.47917 15 8.71667 15 9C15 9.28333 14.9042 9.52083 14.7125 9.7125C14.5208 9.90417 14.2833 10 14 10ZM3 18H12V16H2V17C2 17.2833 2.09583 17.5208 2.2875 17.7125C2.47917 17.9042 2.71667 18 3 18Z" fill="#0D4733"/>
-                                                        </svg>
+                                        </div>
+                                        <div class="office-panel__body-structure">
+                                            <div class="office-panel__title">
+                                                Состав
+                                            </div>
+                                            <div class="making-right__structure making-structure making-structure-office">
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
                                                         <p>
-                                                            Чек
+                                                            День 1
                                                         </p>
+                                                        <p class="making-structure__date">
+                                                            13 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 2
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            14 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 3
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            15 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 4
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            16 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 5
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            17 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 6
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            18 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 7
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            19 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="office-panel__item office-panel__item-right">
-                                            <div class="office-panel__text-block">
-                                                <div class="office-panel__title">
-                                                    Состав
-                                                </div>
-                                                <div class="office-panel__structure">
-                                                    <div class="office-panel__sub-text">
-                                                        <p>
-                                                            Салат с тунцом
-                                                        </p>
-                                                        <p>
-                                                            1
-                                                        </p>
-                                                    </div>
-                                                    <div class="office-panel__sub-text">
-                                                        <p>
-                                                            Крем-суп из шампиньонов
-                                                        </p>
-                                                        <p>
-                                                            2
-                                                        </p>
-                                                    </div>
-                                                    <div class="office-panel__sub-text">
-                                                        <p>
-                                                            Рыба, запеченная с лимоном и зеленью
-                                                        </p>
-                                                        <p>
-                                                            2
-                                                        </p>
-                                                    </div>
-                                                    <div class="office-panel__sub-text">
-                                                        <p>
-                                                            Салат Нисуаз
-                                                        </p>
-                                                        <p>
-                                                            1   
-                                                        </p>
-                                                    </div>
-                                                    <div class="office-panel__sub-text">
-                                                        <p>
-                                                            Количество приборов
-                                                        </p>
-                                                        <p>
-                                                            2
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                
+                                        <div class="office-panel__body-bot">
+                                            <div class="office-panel__body-bot-text">
+                                                <p class="orange">
+                                                    Доступно к заполнению: <span>7 дней</span>
+                                                </p>
+                                                <p>
+                                                    Выбрать меню возможно с 18 июля
+                                                </p>
                                             </div>
+                                            <a href="#" class="button gray disablet office-panel__body-button">
+                                                Заполнить дни
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -753,6 +1014,250 @@
                                 </div>
                                 <div class="button white office-panel__button">
                                     Изменить заказ
+                                </div>
+                            </div>
+                            <div class="office-panel__order">
+                                <div class="office-panel__order-body">
+                                    <div class="office-panel-head office-panel__head">
+                                        <div class="office-panel-head__row">
+                                            <div class="office-panel__title office-panel-head__number">
+                                                Заказ №236
+                                            </div>
+                                            <div class="office-panel__sub-text office-panel-head__date">
+                                                08 июля 2024 г. в 16:00
+                                            </div>
+                                        </div>
+                                        <div class="office-panel-head__icon">
+                                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.2929 16.1768C11.6834 16.5673 12.3166 16.5673 12.7071 16.1768L18.6844 10.1998C19.0721 9.81216 19.6997 9.80894 20.0913 10.1926L20.2782 10.3757C20.6756 10.765 20.6789 11.4038 20.2855 11.7972L12.7071 19.3753C12.3166 19.7658 11.6834 19.7658 11.2929 19.3753L3.71446 11.7972C3.32107 11.4038 3.32436 10.765 3.72176 10.3757L3.90869 10.1926C4.30033 9.80893 4.92787 9.81216 5.31556 10.1998L11.2929 16.1768Z" fill="#0D4733"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="office-panel__body">
+                                        <div class="office-panel__body-row">
+                                            <div class="office-panel__item">
+                                                <div class="office-panel__text-block">
+                                                    <div class="office-panel__title">
+                                                        Доставка
+                                                    </div>
+                                                    <div class="office-panel__sub-text">
+                                                        Москва, улица Ленина, 20-11
+                                                    </div>
+                                                </div>
+                                                <div class="office-panel__text-block">
+                                                    <div class="office-panel__title">
+                                                        Время доставки
+                                                    </div>
+                                                    <div class="office-panel__sub-text">
+                                                        Ежедневно
+                                                    </div>
+                                                    <div class="office-panel__sub-text">
+                                                        16:00 — 17:00
+                                                    </div>
+                                                </div>
+                                                <div class="office-panel__text-block">
+                                                    <div class="office-panel__title">
+                                                        Сумма заказа
+                                                    </div>
+                                                    <div class="office-panel__sub-text office-panel-sum office-panel__sum">
+                                                        <p>65 500 руб.</p>
+                                                        <div class="office-panel-sum__check">
+                                                            <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M3 20C2.16667 20 1.45833 19.7083 0.875 19.125C0.291667 18.5417 0 17.8333 0 17V14H3V0L4.5 1.5L6 0L7.5 1.5L9 0L10.5 1.5L12 0L13.5 1.5L15 0L16.5 1.5L18 0V17C18 17.8333 17.7083 18.5417 17.125 19.125C16.5417 19.7083 15.8333 20 15 20H3ZM15 18C15.2833 18 15.5208 17.9042 15.7125 17.7125C15.9042 17.5208 16 17.2833 16 17V3H5V14H14V17C14 17.2833 14.0958 17.5208 14.2875 17.7125C14.4792 17.9042 14.7167 18 15 18ZM6 7V5H12V7H6ZM6 10V8H12V10H6ZM14 7C13.7167 7 13.4792 6.90417 13.2875 6.7125C13.0958 6.52083 13 6.28333 13 6C13 5.71667 13.0958 5.47917 13.2875 5.2875C13.4792 5.09583 13.7167 5 14 5C14.2833 5 14.5208 5.09583 14.7125 5.2875C14.9042 5.47917 15 5.71667 15 6C15 6.28333 14.9042 6.52083 14.7125 6.7125C14.5208 6.90417 14.2833 7 14 7ZM14 10C13.7167 10 13.4792 9.90417 13.2875 9.7125C13.0958 9.52083 13 9.28333 13 9C13 8.71667 13.0958 8.47917 13.2875 8.2875C13.4792 8.09583 13.7167 8 14 8C14.2833 8 14.5208 8.09583 14.7125 8.2875C14.9042 8.47917 15 8.71667 15 9C15 9.28333 14.9042 9.52083 14.7125 9.7125C14.5208 9.90417 14.2833 10 14 10ZM3 18H12V16H2V17C2 17.2833 2.09583 17.5208 2.2875 17.7125C2.47917 17.9042 2.71667 18 3 18Z" fill="#0D4733"/>
+                                                            </svg>
+                                                            <p>
+                                                                Чек
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="office-panel__item">
+                                                    <div class="office-panel__text-block">
+                                                        <div class="office-panel__title">
+                                                            Диета
+                                                        </div>
+                                                        <div class="office-panel__sub-text">
+                                                            Гепатоз
+                                                        </div>
+                                                    </div>
+                                                    <div class="office-panel__text-block">
+                                                        <div class="office-panel__title">
+                                                            Начало диеты
+                                                        </div>
+                                                        <div class="office-panel__sub-text">
+                                                            13 июля, ср.
+                                                        </div>
+                                                    </div>
+                                                    <div class="office-panel__text-block">
+                                                        <div class="office-panel__title">
+                                                            Завершение диеты
+                                                        </div>
+                                                        <div class="office-panel__sub-text">
+                                                            23 июля, вт.
+                                                        </div>
+                                                    </div>
+                                                    <div class="office-panel__text-block">
+                                                        <div class="office-panel__title">
+                                                            Количество дней
+                                                        </div>
+                                                        <div class="office-panel__sub-text">
+                                                            14 дней
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="office-panel__body-structure">
+                                            <div class="office-panel__title">
+                                                Состав
+                                            </div>
+                                            <div class="making-right__structure making-structure making-structure-office">
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 1
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            13 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 2
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            14 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 3
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            15 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 4
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            16 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 5
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            17 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 6
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            18 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                                <div class="making-structure__item">
+                                                    <div class="making-structure__head">
+                                                        <p>
+                                                            День 7
+                                                        </p>
+                                                        <p class="making-structure__date">
+                                                            19 июля 
+                                                        </p>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.2929 15.6768C11.6834 16.0673 12.3166 16.0673 12.7071 15.6768L18.6844 9.69982C19.0721 9.31216 19.6997 9.30894 20.0913 9.6926L20.2782 9.87571C20.6756 10.265 20.6789 10.9038 20.2855 11.2972L12.7071 18.8753C12.3166 19.2658 11.6834 19.2658 11.2929 18.8753L3.71446 11.2972C3.32107 10.9038 3.32436 10.265 3.72176 9.87571L3.90869 9.6926C4.30033 9.30893 4.92787 9.31216 5.31556 9.69982L11.2929 15.6768Z" fill="#0D4733"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="making-structure__body">
+                                                        <p>Салат с тунцом</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                        <p>Рыба, запеченная с лимоном и зеленью</p>
+                                                        <p>Салат Нисуаз</p>
+                                                        <p>Крем-суп из шампиньонов</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button white office-panel__button">
+                                    Повторить заказ
                                 </div>
                             </div>
                         </div>
@@ -1020,7 +1525,7 @@
                         3 274, 50 руб.
                     </p>
                 </div>
-                <div class="basket-bot__button-row disablet">
+                <div class="disablet basket-bot__button-row">
                     <p>
                         Минимальная стоимость заказа 3 000 руб.
                     </p>
@@ -1177,25 +1682,25 @@
                         <label class="input-item__label">
                             Введите логин
                         </label>
-                        <input type="text" placeholder="Введите логин" name="login" class="input-item__input text">
+                        <input type="text" placeholder="Введите логин" name="login" class="text input-item__input">
                     </div>
                     <div class="input-item making__input-item">
                         <label class="input-item__label">
                             Введите E-mail
                         </label>
-                        <input type="text" placeholder="Введите E-mail" name="email" class="input-item__input text">
+                        <input type="text" placeholder="Введите E-mail" name="email" class="text input-item__input">
                     </div>
                     <div class="input-item making__input-item">
                         <label class="input-item__label">
                             Введите пароль
                         </label>
-                        <input type="password" placeholder="Введите пароль" name="password" class="input-item__input text">
+                        <input type="password" placeholder="Введите пароль" name="password" class="text input-item__input">
                     </div>
                     <div class="input-item making__input-item">
                         <label class="input-item__label">
                             Подтвердите пароль
                         </label>
-                        <input type="text" placeholder="Подтвердите пароль" name="password-two" class="input-item__input text">
+                        <input type="text" placeholder="Подтвердите пароль" name="password-two" class="text input-item__input">
                     </div>
                 </div>
                 <button class="button gray form__button">
@@ -1224,7 +1729,7 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3907 2.3582C21.7795 1.96598 21.7795 1.33006 21.3907 0.937833L20.7526 0.294168C20.3638 -0.0980562 19.7334 -0.0980561 19.3446 0.294169L10.9371 8.77537L2.6376 0.403128C2.24878 0.0109033 1.61839 0.0109033 1.22957 0.403128L0.591496 1.04679C0.20268 1.43902 0.20268 2.07494 0.591497 2.46716L8.89099 10.8394L0.291612 19.5142C-0.0972041 19.9064 -0.0972042 20.5423 0.291612 20.9345L0.929684 21.5782C1.3185 21.9704 1.9489 21.9704 2.33771 21.5782L10.9371 12.9034L19.6445 21.6872C20.0333 22.0794 20.6637 22.0794 21.0525 21.6872L21.6906 21.0435C22.0794 20.6513 22.0794 20.0153 21.6906 19.6231L12.9832 10.8394L21.3907 2.3582Z" fill="#EDEEE7"/>
                 </svg>
             </button>
-            <form action="#" class="form__body popup__body">
+            <form action="#" class="popup__body form__body">
                 <h2 class="form__title">
                     Вход в личный кабинет
                 </h2>
@@ -1236,13 +1741,13 @@
                         <label class="input-item__label">
                             Введите E-mail
                         </label>
-                        <input type="text" placeholder="Введите E-mail" name="email" class="input-item__input text">
+                        <input type="text" placeholder="Введите E-mail" name="email" class="text input-item__input">
                     </div>
                     <div class="input-item making__input-item">
                         <label class="input-item__label">
                             Введите пароль
                         </label>
-                        <input type="password" placeholder="Введите пароль" name="password" class="input-item__input text">
+                        <input type="password" placeholder="Введите пароль" name="password" class="text input-item__input">
                         <a href="#" class="input-item__sub">Забыли пароль?</a>
                     </div>
                 </div>
@@ -1264,21 +1769,67 @@
         </div>
     </div>
 </div>
-<div class="popup form" data-popup="popup-attention" data-close-overlay>
+<div class="popup popup-attention" data-popup="popup-attention" data-close-overlay>
     <div class="popup__wrapper" data-close-overlay>
-        <div class="popup__content form__content">
+        <div class="popup__content">
             <button class="button-close popup__close" type="button">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3907 2.3582C21.7795 1.96598 21.7795 1.33006 21.3907 0.937833L20.7526 0.294168C20.3638 -0.0980562 19.7334 -0.0980561 19.3446 0.294169L10.9371 8.77537L2.6376 0.403128C2.24878 0.0109033 1.61839 0.0109033 1.22957 0.403128L0.591496 1.04679C0.20268 1.43902 0.20268 2.07494 0.591497 2.46716L8.89099 10.8394L0.291612 19.5142C-0.0972041 19.9064 -0.0972042 20.5423 0.291612 20.9345L0.929684 21.5782C1.3185 21.9704 1.9489 21.9704 2.33771 21.5782L10.9371 12.9034L19.6445 21.6872C20.0333 22.0794 20.6637 22.0794 21.0525 21.6872L21.6906 21.0435C22.0794 20.6513 22.0794 20.0153 21.6906 19.6231L12.9832 10.8394L21.3907 2.3582Z" fill="#EDEEE7"/>
                 </svg>
             </button>
-            <div class="form__body opup__body">
-                <h2 class="form__title">
-                    Регистрация
-                </h2>
+            <div class="popup__body">
+                <svg width="130" height="90" viewBox="0 0 130 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2233_2385)">
+                      <path d="M67.1009 7.31899C65.0377 7.30626 63.4033 5.71003 63.4245 3.71475C63.4415 1.66852 65.0462 0.0171096 67.0288 0.000128488C69.0835 -0.0168526 70.7689 1.65154 70.7689 3.70202C70.7646 5.71852 69.1302 7.33173 67.1009 7.31899Z" fill="#0D4733"/>
+                      <path d="M25.7989 85.687V89.4823H25.2597V86.1837H22.9503V89.4823H22.4111V85.687H25.7989Z" fill="#0D4733"/>
+                      <path d="M28.2357 85.687V88.9219L30.6258 85.687H31.3475V89.4823H30.8253V86.2474L28.4437 89.4823H27.7178V85.687H28.2357Z" fill="#0D4733"/>
+                      <path d="M36.2591 85.687V86.1837H34.8115V89.4823H34.2723V86.1837H32.8247V85.687H36.2591Z" fill="#0D4733"/>
+                      <path d="M38.6789 85.687H39.2393L40.9289 89.4823H40.3685L39.8888 88.3998H37.9487L37.4478 89.4823H36.8789L38.6789 85.687ZM39.6681 87.903L38.9421 86.2898L38.1737 87.903H39.6681Z" fill="#0D4733"/>
+                      <path d="M42.9454 87.1941H45.2548V85.687H45.794V89.4823H45.2548V87.6908H42.9454V89.4823H42.4062V85.687H42.9454V87.1941Z" fill="#0D4733"/>
+                      <path d="M48.2308 85.687V88.9219L50.6209 85.687H51.3426V89.4823H50.8204V86.2474L48.4388 89.4823H47.7129V85.687H48.2308Z" fill="#0D4733"/>
+                      <path d="M53.2572 85.687H56.2713V86.1837H53.7921V87.2917H56.1185V87.7884H53.7921V88.9856H56.3053V89.4823H53.2529V85.687H53.2572Z" fill="#0D4733"/>
+                      <path d="M62.699 89.5841C61.4084 89.5841 60.623 88.7945 60.623 87.5888C60.623 86.3831 61.4084 85.5935 62.7032 85.5935C63.7646 85.5935 64.5032 86.1964 64.5796 87.0709H64.0193C63.9131 86.4638 63.4249 86.0987 62.6947 86.0987C61.7311 86.0987 61.1792 86.6591 61.1792 87.5888C61.1792 88.5185 61.7395 89.0789 62.699 89.0789C63.4462 89.0789 63.9683 88.6544 64.0575 88.0176H64.6179C64.5202 88.96 63.773 89.5841 62.699 89.5841Z" fill="#0D4733"/>
+                      <path d="M68.1583 85.5894C69.4489 85.5894 70.2342 86.379 70.2342 87.5846C70.2342 88.7903 69.4489 89.5799 68.1541 89.5799C66.8635 89.5799 66.0781 88.7903 66.0781 87.5846C66.0781 86.379 66.8635 85.5894 68.1583 85.5894ZM68.1583 89.0747C69.1262 89.0747 69.6739 88.5101 69.6739 87.5846C69.6739 86.6549 69.122 86.0945 68.1541 86.0945C67.1904 86.0945 66.6385 86.6549 66.6385 87.5846C66.6385 88.5143 67.1946 89.0747 68.1583 89.0747Z" fill="#0D4733"/>
+                      <path d="M74.7342 85.687H76.8441C77.5913 85.687 77.9989 86.0436 77.9989 86.6422C77.9989 87.0455 77.7951 87.3214 77.396 87.4785C77.8715 87.5719 78.1262 87.8818 78.1262 88.3743C78.1262 89.1342 77.6932 89.4823 76.7889 89.4823H74.73V85.687H74.7342ZM75.2691 87.2832H76.6191C77.1922 87.2832 77.4597 87.1601 77.4597 86.7314C77.4597 86.3408 77.2305 86.188 76.7338 86.188H75.2691V87.2832ZM75.2691 88.9856H76.6658C77.2729 88.9856 77.5701 88.8328 77.5701 88.4167C77.5701 87.9625 77.3069 87.7799 76.7423 87.7799H75.2691V88.9856Z" fill="#0D4733"/>
+                      <path d="M80.3974 87.6356L82.6134 85.687H83.3012L81.4969 87.2662L83.3054 89.4823H82.6729L81.1361 87.5846L80.3932 88.2214V89.4823H79.854V85.687H80.3932V87.6356H80.3974Z" fill="#0D4733"/>
+                      <path d="M84.9694 85.6869L86.2812 88.2807L87.5208 85.6869H88.1364L86.5402 88.8793C86.2515 89.4609 85.9586 89.5798 85.6147 89.5798C85.4704 89.5798 85.3175 89.5628 85.1944 89.5416V89.1128C85.2921 89.1298 85.3897 89.134 85.5298 89.134C85.7506 89.134 85.8057 89.0831 86.001 88.7732L84.3496 85.6826H84.9694V85.6869Z" fill="#0D4733"/>
+                      <path d="M91.3587 89.5841C90.0681 89.5841 89.2827 88.7945 89.2827 87.5888C89.2827 86.3831 90.0681 85.5935 91.3629 85.5935C92.4242 85.5935 93.1629 86.1964 93.2393 87.0709H92.6789C92.5728 86.4638 92.0846 86.0987 91.3544 86.0987C90.3907 86.0987 89.8388 86.6591 89.8388 87.5888C89.8388 88.5185 90.3992 89.0789 91.3587 89.0789C92.1058 89.0789 92.628 88.6544 92.7172 88.0176H93.2775C93.1799 88.96 92.4327 89.5841 91.3587 89.5841Z" fill="#0D4733"/>
+                      <path d="M96.818 85.5894C98.1085 85.5894 98.8939 86.379 98.8939 87.5846C98.8939 88.7903 98.1086 89.5799 96.8137 89.5799C95.5232 89.5799 94.7378 88.7903 94.7378 87.5846C94.7378 86.379 95.5232 85.5894 96.818 85.5894ZM96.818 89.0747C97.7859 89.0747 98.3335 88.5101 98.3335 87.5846C98.3335 86.6549 97.7817 86.0945 96.8137 86.0945C95.8501 86.0945 95.2982 86.6549 95.2982 87.5846C95.2982 88.5143 95.8543 89.0747 96.818 89.0747Z" fill="#0D4733"/>
+                      <path d="M101.411 85.687L102.876 88.9898L104.375 85.687H105.173V89.4823H104.651V86.154L103.144 89.4823H102.6L101.123 86.154V89.4823H100.601V85.687H101.411Z" fill="#0D4733"/>
+                      <path d="M34.3955 28.7069L34.404 28.3205L36.6498 26.2786C36.8535 26.1045 36.9809 25.9347 37.0446 25.7691C37.1082 25.6035 37.138 25.4295 37.138 25.2427C37.138 25.0304 37.0828 24.8436 36.9809 24.6696C36.879 24.4955 36.7432 24.3554 36.5733 24.2535C36.3993 24.1517 36.2125 24.105 36.0002 24.105C35.7795 24.105 35.5842 24.1517 35.4101 24.262C35.2361 24.3639 35.096 24.504 35.0026 24.6781C34.9007 24.8521 34.854 25.0389 34.854 25.2427H34.438C34.438 24.954 34.5101 24.6908 34.6502 24.4573C34.7903 24.2281 34.9729 24.0413 35.2064 23.9054C35.4483 23.7738 35.7073 23.7017 36.0002 23.7017C36.2889 23.7017 36.5564 23.7738 36.7941 23.9139C37.0233 24.0455 37.2101 24.2366 37.346 24.4701C37.4861 24.7078 37.5497 24.9668 37.5497 25.2469C37.5497 25.4422 37.5243 25.6163 37.4861 25.7734C37.4394 25.9219 37.3672 26.062 37.2738 26.1979C37.1804 26.3295 37.053 26.4653 36.896 26.5969L34.7988 28.5073L34.7139 28.3035H37.5497V28.7026H34.3955V28.7069Z" fill="#0D4733"/>
+                      <path d="M40.3431 28.8086C40.0587 28.8086 39.7913 28.7365 39.5578 28.6049C39.32 28.4648 39.1417 28.2737 39.0016 28.0402C38.8615 27.8025 38.7979 27.5435 38.7979 27.2549V25.2596C38.7979 24.9709 38.8615 24.7077 39.0016 24.4742C39.1417 24.2365 39.3243 24.0497 39.5578 23.9096C39.7955 23.778 40.0587 23.7058 40.3431 23.7058C40.6318 23.7058 40.8993 23.778 41.137 23.9096C41.3747 24.0497 41.553 24.2407 41.6931 24.4742C41.8247 24.7119 41.8969 24.9709 41.8969 25.2596V27.2549C41.8969 27.5435 41.8247 27.8068 41.6931 28.0402C41.553 28.278 41.3705 28.4648 41.137 28.6049C40.9035 28.7365 40.6361 28.8086 40.3431 28.8086ZM40.3431 28.4053C40.5554 28.4053 40.7422 28.3586 40.9162 28.2568C41.0903 28.1464 41.2304 28.0148 41.3323 27.8407C41.4342 27.6667 41.4894 27.4799 41.4894 27.2676V25.2384C41.4894 25.0261 41.4342 24.8393 41.3323 24.6652C41.2304 24.4912 41.0903 24.3511 40.9162 24.2492C40.7422 24.1473 40.5554 24.1006 40.3431 24.1006C40.1394 24.1006 39.9441 24.1473 39.77 24.2492C39.6045 24.3511 39.4644 24.4912 39.3625 24.6652C39.2606 24.8393 39.2054 25.0261 39.2054 25.2384V27.2676C39.2054 27.4799 39.2606 27.6667 39.3625 27.8407C39.4644 28.0148 39.6045 28.1464 39.77 28.2568C39.9441 28.3586 40.1394 28.4053 40.3431 28.4053Z" fill="#0D4733"/>
+                      <path d="M84.3457 30.4813L84.3542 30.0949L86.5999 28.053C86.8037 27.8789 86.9311 27.7091 86.9948 27.5435C87.0584 27.378 87.0882 27.2039 87.0882 27.0171C87.0882 26.8048 87.033 26.6181 86.9311 26.444C86.8292 26.2699 86.6933 26.1299 86.5235 26.028C86.3537 25.9261 86.1627 25.8794 85.9504 25.8794C85.7297 25.8794 85.5344 25.9261 85.3603 26.0365C85.1863 26.1383 85.0462 26.2784 84.9528 26.4525C84.8509 26.6266 84.8042 26.8133 84.8042 27.0171H84.3881C84.3881 26.7284 84.4603 26.4652 84.6004 26.2317C84.7405 26.0025 84.9231 25.8157 85.1565 25.6799C85.3985 25.5482 85.6575 25.4761 85.9504 25.4761C86.2433 25.4761 86.5065 25.5482 86.7443 25.6883C86.9735 25.8199 87.1603 26.011 87.2962 26.2445C87.4363 26.4822 87.4999 26.7412 87.4999 27.0214C87.4999 27.2166 87.4745 27.3907 87.4363 27.5478C87.3896 27.6964 87.3174 27.8365 87.224 27.9723C87.1306 28.1039 87.0032 28.2398 86.8462 28.3714L84.749 30.2817L84.6641 30.078H87.4999V30.477H84.3457V30.4813Z" fill="#0D4733"/>
+                      <path d="M90.8066 30.4814V29.4923H88.4717V29.0975L90.1358 25.5781H90.5901L88.9259 29.0975H90.8023V27.6201H91.2099V29.0975H91.766V29.4923H91.2099V30.4814H90.8066Z" fill="#0D4733"/>
+                      <path d="M62.2616 9.84912C62.2616 9.84912 55.2612 17.1807 62.3678 25.2255C65.4541 28.7194 68.9183 32.1836 71.2362 36.2633C74.3437 41.7354 70.905 55.0954 61.1536 56.8317C66.3159 53.1807 67.4239 49.8652 68.1032 48.252C71.1343 41.0605 65.6536 33.3807 60.9966 27.8746C57.231 23.4213 56.4583 19.5708 58.2583 14.7779C60.0541 9.98498 62.2616 9.84912 62.2616 9.84912Z" fill="#0D4733"/>
+                      <path d="M75.723 2.35626C76.3173 5.09871 77.0221 9.9723 73.5876 14.9265C71.9405 17.2997 69.8645 19.0487 67.4999 20.6874C65.4791 22.0883 63.3438 23.311 61.5056 24.9369C58.7249 27.3949 56.6829 29.5685 56.2839 33.4063C55.94 36.7388 58.2876 39.4982 60.6225 41.5147C61.6626 42.4147 64.5494 45.1063 64.889 45.1827C64.889 45.1827 59.3659 45.1742 55.3414 40.0374C52.8579 36.8704 53.6306 31.5638 56.199 28.6515C61.4334 22.7166 69.7117 19.0657 72.8914 11.3563C75.723 4.50862 75.723 2.34352 75.723 2.35626Z" fill="#0D4733"/>
+                      <path d="M56.7168 30.7062C56.7168 30.7062 62.1762 28.4435 62.9149 28.2907C63.5687 28.1548 64.3371 29.4836 64.2989 30.1841C64.2437 30.2393 64.1545 30.235 64.0739 30.2265C61.5437 29.9506 59.3446 30.6723 57.0522 31.6487C55.4899 32.3152 55.5705 32.7567 55.9823 31.9628C56.1309 31.6784 56.1182 30.9779 56.2031 30.7062" fill="#0D4733"/>
+                      <path d="M55.0908 35.4144C55.7276 35.2446 65.2498 33.105 65.2498 33.105L67.2451 35.5036C67.2451 35.5036 63.887 34.646 60.2573 35.3338C56.6276 36.0172 56.2668 37.0446 56.2668 37.0446L55.18 35.0748" fill="#0D4733"/>
+                      <path d="M57.7019 40.2328C57.9439 40.2328 66.6892 38.0083 67.742 38.0083C68.7949 38.0083 68.8755 40.4366 68.8755 40.4366C68.8755 40.4366 65.959 38.4795 58.6741 40.9757C55.0869 42.2069 58.1901 41.7187 58.1901 41.7187L57.7019 40.2328Z" fill="#0D4733"/>
+                      <path d="M58.6865 15.1729C58.6865 15.1729 61.17 13.5469 64.7658 13.203C68.3615 12.8592 72.3011 13.9714 72.3011 13.9714L72.9846 11.5728C72.9846 11.5728 68.1917 11.403 65.1945 11.8276C62.1974 12.2563 58.6865 14.0521 58.6865 14.0521V15.1729Z" fill="#0D4733"/>
+                      <path d="M58.343 17.9491C58.343 17.9491 62.4524 15.9793 66.8166 15.6397C69.0539 15.4656 70.7562 15.6015 70.7562 15.6015L69.7289 17.1807C69.7289 17.1807 64.9359 16.752 58.8567 18.9765C57.0949 19.6218 58.343 17.9491 58.343 17.9491Z" fill="#0D4733"/>
+                      <path d="M59.1326 22.776C59.1326 22.776 61.9769 21.6935 63.467 21.8293C64.9571 21.9652 65.5642 21.6935 65.5642 21.6935L65.9717 20.4751C65.9717 20.4751 60.6906 20.6789 58.9288 22.4407C57.167 24.2025 59.1326 22.776 59.1326 22.776Z" fill="#0D4733"/>
+                      <path d="M0.00424943 66.562H4.15189C4.72924 66.562 5.22595 66.6469 5.65472 66.8167C6.08349 66.9865 6.42736 67.2073 6.69906 67.4705C6.97075 67.7337 7.17029 68.0266 7.30614 68.3493C7.43774 68.6677 7.50567 68.9861 7.50567 69.2917C7.50567 69.6441 7.42925 69.9795 7.27217 70.2936C7.11934 70.6078 6.91133 70.8837 6.65236 71.1215C6.3934 71.3592 6.09198 71.5502 5.74812 71.7031C5.40425 71.8516 5.0434 71.9281 4.65708 71.9281V71.996C4.89906 72.0087 5.2217 72.0469 5.61651 72.1106C6.01557 72.1785 6.4019 72.3101 6.77548 72.5097C7.14907 72.7092 7.47595 72.9936 7.75189 73.3714C8.02783 73.745 8.16793 74.2502 8.16793 74.8785C8.16793 75.2776 8.1 75.6724 7.95991 76.063C7.81981 76.4535 7.59906 76.8059 7.28491 77.1158C6.975 77.4257 6.56321 77.6762 6.05378 77.8672C5.54434 78.0625 4.91604 78.1559 4.17312 78.1559H0V66.562H0.00424943ZM3.49812 71.6266C3.82925 71.6266 4.13915 71.5714 4.43208 71.4611C4.725 71.3507 4.98397 71.1979 5.20897 70.9983C5.43397 70.7988 5.61227 70.5611 5.73963 70.2851C5.86699 70.0092 5.93066 69.712 5.93066 69.3894C5.93066 69.1347 5.88821 68.8799 5.79906 68.6295C5.70991 68.3748 5.56982 68.1498 5.37878 67.9502C5.1835 67.7507 4.93727 67.5936 4.63585 67.4705C4.33019 67.3474 3.9651 67.288 3.53633 67.288H1.51557V71.6266H3.49812ZM3.9184 77.4215C4.27076 77.4215 4.60613 77.3705 4.92453 77.2644C5.23868 77.1582 5.51463 77.0012 5.74812 76.7931C5.98161 76.5851 6.16415 76.3304 6.30425 76.0332C6.44434 75.7361 6.51226 75.3922 6.51226 75.0059C6.51226 74.6535 6.44859 74.3181 6.32123 73.9955C6.19387 73.6771 5.99859 73.3927 5.73963 73.1507C5.48067 72.9087 5.14953 72.7134 4.75047 72.5733C4.35142 72.4332 3.8802 72.3568 3.3368 72.3568H1.51132V77.4215H3.9184Z" fill="#0D4733"/>
+                      <path d="M13.1179 66.562V78.1516H11.6108V66.562H13.1179Z" fill="#0D4733"/>
+                      <path d="M16.9516 70.353C17.1893 69.6483 17.5629 68.9988 18.0681 68.4087C18.5775 67.8186 19.2228 67.3304 20.0039 66.9441C20.7893 66.5577 21.7275 66.3667 22.8186 66.3667C23.9223 66.3667 24.8818 66.562 25.6926 66.9526C26.5035 67.3431 27.1742 67.8398 27.7049 68.4341C28.2356 69.0285 28.6261 69.678 28.8808 70.3785C29.1355 71.079 29.2629 71.7412 29.2629 72.3568C29.2629 72.7643 29.2035 73.1974 29.0889 73.6474C28.9742 74.1016 28.8002 74.5516 28.5752 74.9974C28.3502 75.4431 28.0573 75.8677 27.7049 76.271C27.3525 76.6743 26.9365 77.0309 26.4568 77.3408C25.9771 77.6507 25.4379 77.8969 24.8351 78.0794C24.2322 78.262 23.5615 78.3511 22.8228 78.3511C21.7318 78.3511 20.7936 78.1559 20.0082 77.7653C19.2228 77.3747 18.5775 76.878 18.0723 76.2837C17.5629 75.6893 17.1936 75.0398 16.9558 74.3393C16.7181 73.6389 16.5992 72.9808 16.5992 72.361C16.595 71.7242 16.7139 71.0577 16.9516 70.353ZM18.5733 74.4837C18.811 75.129 19.1379 75.6851 19.5497 76.1478C19.9615 76.6106 20.4539 76.9714 21.0143 77.2304C21.5789 77.4893 22.1903 77.6209 22.8525 77.6209C23.5021 77.6209 24.1176 77.4893 24.6992 77.2304C25.2766 76.9714 25.786 76.6106 26.2233 76.1478C26.6606 75.6851 27.0044 75.129 27.2591 74.4837C27.5139 73.8384 27.6412 73.1294 27.6412 72.3568C27.6412 71.5842 27.5139 70.8752 27.2591 70.2299C27.0044 69.5846 26.6606 69.0285 26.2233 68.5658C25.786 68.103 25.2808 67.7422 24.6992 67.4832C24.1176 67.2242 23.5063 67.0926 22.8525 67.0926C22.1903 67.0926 21.5789 67.2242 21.0143 67.4832C20.4497 67.7422 19.9615 68.103 19.5497 68.5658C19.1379 69.0285 18.811 69.5846 18.5733 70.2299C18.3355 70.8752 18.2167 71.5842 18.2167 72.3568C18.2167 73.1294 18.3355 73.8384 18.5733 74.4837Z" fill="#0D4733"/>
+                      <path d="M32.0732 78.1516V66.562H33.5803V77.2431H39.5577V78.1516H32.0732Z" fill="#0D4733"/>
+                      <path d="M41.2387 70.353C41.4764 69.6483 41.85 68.9988 42.3552 68.4087C42.8647 67.8186 43.5099 67.3304 44.2911 66.9441C45.0764 66.5577 46.0147 66.3667 47.1057 66.3667C48.2095 66.3667 49.1689 66.562 49.9797 66.9526C50.7906 67.3431 51.4613 67.8398 51.992 68.4341C52.5227 69.0285 52.9132 69.678 53.168 70.3785C53.4227 71.079 53.55 71.7412 53.55 72.3568C53.55 72.7643 53.4906 73.1974 53.376 73.6474C53.2613 74.1016 53.0873 74.5516 52.8623 74.9974C52.6373 75.4431 52.3444 75.8677 51.992 76.271C51.6396 76.6743 51.2236 77.0309 50.7439 77.3408C50.2642 77.6507 49.725 77.8969 49.1222 78.0794C48.5194 78.262 47.8486 78.3511 47.1099 78.3511C46.0189 78.3511 45.0807 78.1559 44.2953 77.7653C43.5099 77.3747 42.8646 76.878 42.3595 76.2837C41.85 75.6893 41.4807 75.0398 41.243 74.3393C41.0052 73.6389 40.8863 72.9808 40.8863 72.361C40.8821 71.7242 41.001 71.0577 41.2387 70.353ZM42.8604 74.4837C43.0981 75.129 43.425 75.6851 43.8368 76.1478C44.2486 76.6106 44.7411 76.9714 45.3014 77.2304C45.8661 77.4893 46.4774 77.6209 47.1396 77.6209C47.7892 77.6209 48.4047 77.4893 48.9863 77.2304C49.5637 76.9714 50.0731 76.6106 50.5104 76.1478C50.9477 75.6851 51.2915 75.129 51.5463 74.4837C51.801 73.8384 51.9283 73.1294 51.9283 72.3568C51.9283 71.5842 51.801 70.8752 51.5463 70.2299C51.2915 69.5846 50.9477 69.0285 50.5104 68.5658C50.0731 68.103 49.568 67.7422 48.9863 67.4832C48.4047 67.2242 47.7934 67.0926 47.1396 67.0926C46.4774 67.0926 45.8661 67.2242 45.3014 67.4832C44.7368 67.7422 44.2486 68.103 43.8368 68.5658C43.425 69.0285 43.0981 69.5846 42.8604 70.2299C42.6227 70.8752 42.5038 71.5842 42.5038 72.3568C42.5038 73.1294 42.6227 73.8384 42.8604 74.4837Z" fill="#0D4733"/>
+                      <path d="M66.9101 78.1516H65.5049V77.4723C65.0846 77.6931 64.554 77.8926 63.9129 78.0751C63.2719 78.2577 62.5375 78.3468 61.7054 78.3468C60.6016 78.3468 59.6507 78.1728 58.8526 77.8247C58.0544 77.4765 57.4007 77.0138 56.887 76.4322C56.3733 75.8506 55.9912 75.1968 55.7408 74.4624C55.4903 73.728 55.3672 72.9681 55.3672 72.1869C55.3672 71.2699 55.5285 70.4506 55.8469 69.7289C56.1653 69.0072 56.6153 68.3959 57.1884 67.8992C57.7615 67.4025 58.445 67.0204 59.2346 66.7572C60.0243 66.494 60.8861 66.3582 61.8243 66.3582C62.6394 66.3582 63.3483 66.4473 63.9511 66.6298C64.554 66.8124 65.0592 67.0374 65.4667 67.3006C65.8743 67.5638 66.1969 67.8482 66.4346 68.1539C66.6724 68.4553 66.8422 68.7313 66.9398 68.9733H65.7469C65.679 68.7398 65.5346 68.5147 65.3096 68.2855C65.0846 68.0605 64.796 67.8567 64.4394 67.6827C64.087 67.5044 63.6837 67.3643 63.2294 67.2539C62.7752 67.1435 62.2912 67.0883 61.7733 67.0883C60.9879 67.0883 60.3045 67.2157 59.7101 67.4704C59.12 67.7251 58.6191 68.0817 58.2115 68.5487C57.804 69.0157 57.4983 69.5633 57.2945 70.2044C57.0908 70.8454 56.9889 71.5459 56.9889 72.3058C56.9889 73.0784 57.095 73.7874 57.3115 74.4327C57.528 75.078 57.8507 75.6341 58.2837 76.1053C58.7167 76.5765 59.2559 76.9416 59.9096 77.2048C60.5634 77.4681 61.3233 77.6039 62.1978 77.6039C62.8601 77.6039 63.4544 77.5275 63.9724 77.3704C64.4903 77.2176 64.9997 76.9798 65.5007 76.6572V73.66H63.6455V72.9808H66.9059V78.1516H66.9101Z" fill="#0D4733"/>
+                      <path d="M72.0593 66.562V78.1516H70.5522V66.562H72.0593Z" fill="#0D4733"/>
+                      <path d="M86.9435 76.4618C86.7992 76.6274 86.5912 76.8184 86.3152 77.0392C86.0393 77.26 85.6954 77.468 85.2794 77.659C84.8676 77.8543 84.3794 78.0156 83.8233 78.1472C83.2671 78.2788 82.6346 78.3467 81.9256 78.3467C80.8091 78.3467 79.8497 78.1727 79.0431 77.8246C78.2365 77.4765 77.5742 77.018 77.0563 76.4491C76.5384 75.8802 76.152 75.2307 75.9058 74.4963C75.6596 73.7618 75.5322 73.0104 75.5322 72.2378C75.5322 71.342 75.6851 70.5354 75.995 69.8137C76.3049 69.092 76.7379 68.4722 77.3025 67.9585C77.8671 67.4449 78.5421 67.05 79.3317 66.7741C80.1214 66.4982 80.9959 66.3623 81.9553 66.3623C82.6176 66.3623 83.2077 66.4302 83.7256 66.5618C84.2435 66.6934 84.6978 66.876 85.0841 67.1095C85.4704 67.343 85.7931 67.6189 86.052 67.9373C86.311 68.2557 86.5233 68.6038 86.6888 68.9817H85.4619C85.3855 68.7482 85.2497 68.5232 85.0544 68.2939C84.8591 68.0689 84.6129 67.8651 84.3115 67.6911C84.0058 67.5128 83.6619 67.3727 83.2671 67.2623C82.8766 67.1519 82.4435 67.0967 81.9681 67.0967C81.2719 67.0967 80.6308 67.2241 80.0407 67.4788C79.4506 67.7335 78.9412 68.0859 78.5082 68.5401C78.0794 68.9944 77.744 69.5293 77.5063 70.1534C77.2685 70.7774 77.1497 71.4651 77.1497 72.2166C77.1497 72.9213 77.2643 73.6005 77.4893 74.2543C77.7143 74.9081 78.0497 75.4812 78.4912 75.9779C78.9327 76.4746 79.4846 76.8736 80.1468 77.1708C80.8091 77.468 81.569 77.6166 82.4308 77.6166C83.9761 77.6166 85.3134 77.0859 86.4384 76.0288L86.9435 76.4618Z" fill="#0D4733"/>
+                      <path d="M95.0518 78.1516V66.562H96.5588V77.2431H102.536V78.1516H95.0518Z" fill="#0D4733"/>
+                      <path d="M107.189 66.562V78.1516H105.682V66.562H107.189Z" fill="#0D4733"/>
+                      <path d="M119.31 66.5619V67.4704H113.332V71.6265H118.465V72.3864H113.332V78.1472H111.825V66.5576H119.31V66.5619Z" fill="#0D4733"/>
+                      <path d="M129.277 66.5619V67.4704H123.3V71.6265H128.433V72.3864H123.3V77.2388H129.277V78.1472H121.793V66.5576H129.277V66.5619Z" fill="#0D4733"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2233_2385">
+                        <rect width="130" height="90" fill="white"/>
+                      </clipPath>
+                    </defs>
+                </svg>
                 <p class="form__sub-text">
                     Заполните ваши данные что бы 
-                    <br>зарегистрироваться в личный кабенет
+                    зарегистрироваться в личный кабенет
                 </p>
             </div>
         </div>
