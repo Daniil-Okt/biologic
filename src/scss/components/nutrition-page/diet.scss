@@ -1,0 +1,343 @@
+.diet {
+    padding-top: rem(25);
+    &.diet-two {
+        @include adaptiveClamp(padding-top, 130, 100);
+        @include adaptiveClamp(padding-bottom, 130, 100);
+    }
+    &__container {
+        h2 {
+            @include adaptiveClamp(margin-bottom, 30, 24);
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: rem(50);
+        @media(max-width:1300px){
+            gap: rem(25);
+        }
+        @media(max-width:950px){
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__nav {
+        position: relative;
+        @include adaptiveClamp(padding-top, 93, 56);
+        @include adaptiveClamp(padding-bottom, 92, 41);
+        @include adaptiveClamp(padding-left, 127, 72);
+        @include adaptiveClamp(padding-right, 127, 77);
+        &.diet__nav-two {
+            @include adaptiveClamp(padding-top, 131, 33);
+            @include adaptiveClamp(padding-bottom, 80, 8);
+            @include adaptiveClamp(padding-left, 122, 30);
+            @include adaptiveClamp(padding-right, 122, 30);
+            @include adaptiveClamp(min-height, 707, 359);
+            @include adaptiveClamp(max-width, 707, 359);
+            width: 100%;
+            @media(max-width:950px){
+                @include adaptiveClamp(max-width, 707, 359);
+            }
+        }
+    }   
+
+    &__nav-fon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__nav-row {
+        cursor: all-scroll;
+        position: relative;
+
+        overflow-y: auto;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        @include adaptiveClamp(gap, 20, 12);
+        @include adaptiveClamp(max-width, 341, 210);
+        padding-right: rem(10);
+        margin-right: rem(-10);
+        @include adaptiveClamp(max-height, 400, 262);
+        &.diet__nav-row-two {
+            overflow: visible;
+            text-align: center;
+            max-height: 100% !important;
+            max-width: 100% !important;
+            margin: auto;
+            @include adaptiveClamp(gap, 20, 8);
+            cursor: default;
+            p {
+                @include adaptiveClamp(font-size, 22, 14);
+                line-height: 120%;
+            }
+
+        }
+    }
+
+    &__trigger {
+        padding: 0;
+        @include adaptiveClamp(font-size, 22, 14);
+        transition: all 0.3s ease  0s;
+        cursor: pointer;
+        
+        @media(min-width:751px){
+            &.active {
+                color: var(--orange);
+            }
+        }
+    }
+
+    &__content {
+      
+        @media(max-width:950px){
+            width: 100%;
+        }
+        @media(max-width:750px){
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            padding-top: 5px;
+            // padding-top: 100%;
+            background-color: rgba(#000, 50%);
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease  0s;
+            bottom: -100%;
+            &::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 150%;
+                background-color: rgba(#000, 50%);
+                top:-150%;
+                left: 0;
+            }
+            &._active {
+                bottom: 0;
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+
+    &__panel {
+    }
+    &__left-body {
+        max-width: rem(682);
+        width: 100%;
+        .diet-panel__list {
+            @include adaptiveClamp(gap, 20, 16);
+        }
+        p {
+            font-weight: 400;
+            @include adaptiveClamp(font-size, 18, 14);
+            line-height: 120%;
+        }
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include adaptiveClamp(gap, 10, 4);
+        
+    }
+    &__button-row-nav {
+        @include adaptiveClamp(padding-top, 20, 4);
+    }
+    &__button-nav {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        @include adaptiveClamp(gap, 15, 4);
+        span {
+            color: rgba(107, 148, 65, 1);
+            font-weight: 600;
+            line-height: 120%;
+            @include adaptiveClamp(font-size, 22, 16);
+        }
+        svg {
+            @include adaptiveClamp(width, 24, 16);
+        }
+    }
+}
+.title-block-two {
+}
+.diet-panel {
+    
+    @media(max-width:750px){
+        // position: relative;
+        // 
+        left: 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        padding-top: rem(70);
+        transition: all 0.3s ease  0s;
+        
+        .active & {
+            display: flex;
+        }
+    }
+    &__wrap {
+        @media(max-width:750px){
+            height: 100%;
+            width: 100%;
+            background-color: rgba(219, 221, 206, 1); 
+            border-radius: 20px 20px 0 0;
+            padding: rem(24) rem(16) rem(32) rem(16);
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &__content {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(0deg, rgba(219, 221, 206, 1) 0%, rgba(219, 221, 206, 0) 100%);
+            bottom:rem(-10);
+            left: 0;
+            z-index: 2;
+
+            @media(max-width:750px){
+                display: none;
+            }
+        }
+        @media(max-width:750px){
+            flex: auto;
+            max-height: 100%;
+        }
+    }
+    &__body {
+        display: flex;
+        flex-direction: column;
+        @include adaptiveClamp(gap, 10, 8);
+        max-height: rem(466);
+        overflow-y: auto;
+        padding-right: rem(16);
+        margin-right: rem(-10);
+        padding-bottom: rem(70);
+        p {
+            @include adaptiveClamp(font-size, 18, 14);
+        }
+        h3 {
+            font-weight: 600;
+            @include adaptiveClamp(font-size, 22, 18);
+            line-height: 120%;
+        }
+        @media(max-width:750px){
+            max-height: 100%;
+            // height: auto;
+        }
+    }
+
+    p.diet-panel__up-text {
+        font-weight: 600;
+        @include adaptiveClamp(font-size, 18, 14);
+        line-height: 120%;
+        color: var(--orange);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        @include adaptiveClamp(gap, 10, 8);
+
+    }
+
+    &__item {
+        display: flex;
+        @include adaptiveClamp(gap, 20, 8);
+        svg {
+            @include adaptiveClamp(width, 12, 8);
+            @include adaptiveClamp(min-width, 12, 8);
+            @include adaptiveClamp(margin-top, 4.5, 2.5);
+        }
+    }
+
+    &__list-body {
+        display: flex;
+        flex-direction: column;
+        @include adaptiveClamp(gap, 5, 4);
+        h3 {
+            font-weight: 600;
+            @include adaptiveClamp(font-size, 22, 18);
+            line-height: 120%;
+            @include adaptiveClamp(margin-bottom, 5, 4);
+        }
+        h4 {
+            font-weight: 600;
+            @include adaptiveClamp(font-size, 18, 14);
+            line-height: 120%;
+        }
+    }
+
+
+    &__button-row {
+        display: flex;
+        justify-content: center;
+        @include adaptiveClamp(font-size, 18, 16);
+        @include adaptiveClamp(margin-top, 50, 32);
+
+        @media(max-width:750px){
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            padding: rem(20);
+            background-color: rgba(219, 221, 206, 1);
+        }
+    }
+
+    &__button {
+        @media(max-width:750px){
+            // padding: rem(14) rem(24);
+            @include adaptiveClamp(padding-top, 10, 13);
+            @include adaptiveClamp(padding-bottom, 10, 13);
+            padding-right: rem(24);
+            padding-left: rem(24);
+        }
+    }
+
+    &__close {
+        position: absolute;
+        display: none;
+        /** Установить свои значения */
+        top: 23px;
+        right: rem(10);
+        width: rem(22);
+        height: rem(22);
+        svg {
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        }
+
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        color: #000;
+        border-radius: rem(8);
+        @media(max-width:750px){
+            display: flex;
+        }
+    }
+}
+.button {
+}
+.white {
+}

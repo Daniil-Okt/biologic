@@ -1,0 +1,135 @@
+.corporate {
+    padding-top: rem(25);
+    &__container {
+    }
+
+    &__top {
+        max-width: rem(829);
+        margin-bottom: rem(50);
+        p {
+            font-weight: 600;
+            @include adaptiveClamp(font-size, 22, 16);
+            line-height: 120%;
+        }
+    }
+
+    &__work {
+    }
+}
+
+.work-corporate {
+    h2 {
+        @include adaptiveClamp(margin-bottom, 50, 16);
+    }
+    &__pagination-number {
+        @include adaptiveClamp(margin-bottom, 50, 16);
+        @media(max-width:660px){
+            display: block;
+        }
+    }
+
+    &__slider {
+    }
+
+    &__wrapper-two {
+        .swiper-slide {
+            @media(min-width:1401px){
+                margin-right: rem(50) !important;
+            }
+            @media(min-width:1201px){
+                height: rem(433);
+                max-width: rem(415) ;
+                @media(max-width:1400px){
+                    height: rem(410);
+                    max-width: rem(415);
+                    @include adaptiveClamp(max-width, 433, 100);
+                }
+                &:nth-child(3) {
+                    width: rem(483) !important;
+                    height: rem(487) !important;
+                    max-width: rem(483);
+                    @media(max-width:1400px){
+                        @include adaptiveClamp(max-width, 483, 150);
+                        .work-corporate-slide__body {
+                            padding-left: rem(35);
+                            padding-right: rem(35);
+                        }
+                    }
+                }
+            }
+            @media(max-width:1200px){
+                .work-corporate-slide__body {
+                    padding-right: rem(30);
+                    padding-left: rem(30);
+                    padding-bottom: rem(60);
+                    p span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__slide {
+    }
+}
+
+.pagination-number {
+
+    &__wrapper {
+    }
+
+    &__item {
+    }
+}
+
+.work-corporate-slide {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: rem(50);
+
+    @media(max-width:501px){
+        margin: 0;
+    }
+    &:nth-child(even) {
+        margin-top: rem(50);
+        margin-bottom: 0;
+        @media(max-width:501px){
+            margin: 0;
+        }
+    }
+    &__card {
+        height: 100%;
+    }
+
+    &__fon {
+    }
+
+    &__body {
+        padding-top: 30% !important;
+        min-height: auto;
+        height: 100%;
+        padding-right: rem(25);
+        padding-left: rem(25);
+        aspect-ratio: 428 / 427;
+        @media(max-width:1200px){
+            padding-right: rem(30);
+            padding-left: rem(30);
+        }
+    }
+
+    &__number {
+        @media(max-width:660px){
+            display: none;
+        }
+    }
+
+    &__title {
+    }
+
+    &__text {
+        @include adaptiveClamp(font-size, 18, 14);
+    }
+}

@@ -5,7 +5,7 @@
   })
   <body>
     <div class="wrapper">
-
+      @@include('html/header.html')
       <main class="page">
         <div data-observ></div>
         <div class="soon">
@@ -237,9 +237,15 @@
                                         <img src="@img/catalog-card-img.png" alt="">
                                     </div>
                                     <div class="catalog-card__body">
-                                        <h3 class="catalog-card__title">
-                                            Салат с тунцом
-                                        </h3>
+                                        <div class="catalog-card__head">
+                                            <h3 class="catalog-card__title">
+                                                Салат с тунцом
+                                            </h3>
+                                            <div class="catalog-card__price">
+                                                700 руб.
+                                            </div>
+                                        </div>
+                                        
                                         <div class="catalog-card__calorie">
                                             <p>
                                                 Б/Ж/У — 22/15/5
@@ -254,11 +260,10 @@
                                     Тунец - один из самых богатых источников омега-3 жирных кислот, которые полезны для сердечно-сосудистой системы
                                 </p>
                                 <div class="catalog-card__bot">
-                                    <div class="catalog-card__price">
-                                        700 руб.
+                                    <div class="catalog-card__button catalog-card__button-detailed button active">
+                                        Подробнее
                                     </div>
-                                    <div class="catalog-card__button button active basket-open">
-                                        <span>Убрать</span>
+                                    <div class="catalog-card__button button">
                                         Выбрать
                                     </div>
                                 </div>
@@ -292,7 +297,6 @@
                                         700 руб.
                                     </div>
                                     <div class="catalog-card__button button">
-                                        <span>Выбрать</span>
                                         Выбрать
                                     </div>
                                 </div>
@@ -326,7 +330,6 @@
                                         700 руб.
                                     </div>
                                     <div class="catalog-card__button button">
-                                        <span>Выбрать</span>
                                         Выбрать
                                     </div>
                                 </div>
@@ -360,7 +363,6 @@
                                         700 руб.
                                     </div>
                                     <div class="catalog-card__button button">
-                                        <span>Выбрать</span>
                                         Выбрать
                                     </div>
                                 </div>
@@ -394,7 +396,6 @@
                                         700 руб.
                                     </div>
                                     <div class="catalog-card__button button">
-                                        <span>Выбрать</span>
                                         Выбрать
                                     </div>
                                 </div>
@@ -428,7 +429,6 @@
                                         700 руб.
                                     </div>
                                     <div class="catalog-card__button button">
-                                        <span>Выбрать</span>
                                         Выбрать
                                     </div>
                                 </div>
@@ -462,7 +462,6 @@
                                         700 руб.
                                     </div>
                                     <div class="catalog-card__button button">
-                                        <span>Выбрать</span>
                                         Выбрать
                                     </div>
                                 </div>

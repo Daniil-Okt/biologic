@@ -105,6 +105,32 @@
         }
     }
 
+    &__tab-trigger {
+        cursor: pointer;
+        transition: all 0.3s ease  0s;
+        &.active {
+            color: var(--orange);
+        }
+    }
+    &__tab-panel {
+        display: none;
+        flex: auto;
+      
+        flex-direction: column;
+        &.active {
+            display: flex;
+            
+        }
+
+        overflow-y:auto;
+        // Firefox
+        scrollbar-width: none;  
+        scrollbar-color: transparent transparent; 
+        // WebKit (Chrome, Edge, Safari)
+        &::-webkit-scrollbar {  
+            display: none;  
+        }
+    }
     &__body {
         
         margin-top: rem(24);
@@ -123,7 +149,12 @@
     }
 
     &__bot {
-        
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        background-color: #DBDDCE;
+        z-index: 3;
+        // padding-bottom: rem(20);
     }
 
     &__product-row {
@@ -154,7 +185,12 @@
 .basket-bot {
     border-top: 2px solid var(--orange);
     @include adaptiveClamp(padding-top, 20, 16);
-
+    &__min-text {
+        font-weight: 600;
+        @include adaptiveClamp(font-size, 18, 14);
+        line-height: 120%;
+        margin-bottom: rem(10);
+    }
     &__text {
         font-weight: 600;
         font-size: 18px;
@@ -193,6 +229,7 @@
             font-weight: 600;
             @include adaptiveClamp(font-size, 18, 14);
             line-height: 120%;
+            max-width: rem(438);
         }
         &.disablet p {
             display: block;
@@ -241,6 +278,10 @@
         @media(max-width:650px){
             flex-direction: column;
             align-items: start;
+            .basket-product-diet & {
+                align-items: center;
+                flex-direction: row;
+            }
         }
     }
 
@@ -252,13 +293,21 @@
         }
         @media(max-width:650px){
             margin-left: rem(16);
+            .basket-product-diet & {
+                margin-left: 0;
+            }
         }
     }
     &__title {
         max-width: rem(220);
         @media(max-width:650px){
             margin-right: rem(-100);
+            .basket-product-diet & {
+                margin-right: 0;
+            }
         }
+
+        
     }
     &__title, &__price {
         font-weight: 600;
@@ -301,37 +350,79 @@
             right: rem(16.75);
         }
     }
-}
 
-
-.basket-added {
-
-    &__button-add {
-    }
-    &__button-add {
-        padding-left: rem(16.5);
-        padding-right: rem(16.5);
-    }
-
-    .basket-product {
-
-        &__left {
+    &__change {
+        font-weight: 600;
+        @include adaptiveClamp(font-size, 18, 14);
+        line-height: 120%;
+        color: var(--orange);
+        transition: all 0.3s ease  0s;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.7;
         }
-    
-        &__img {
-        }
-    
-        &__title {
-        }
-    
-        &__right {
-        }
-    
-        &__price {
-        }
+        margin-top: auto;
+        margin-bottom: auto;
     }
 }
 
-.button {
+.basket-hide-block {
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        @include adaptiveClamp(gap, 20, 16);
+        padding-top: rem(10);
+        padding-bottom: rem(10);
+        @include adaptiveClamp(padding-right, 10, 8);
+        @include adaptiveClamp(padding-left, 20, 16);
+        align-items: center;
+        box-shadow: 0 0 4px 0 rgba(13, 71, 51, 0.2);
+        border-radius: 20px;
+        background-color: var(--bg-card);
+        cursor: pointer;
+        p {
+            font-weight: 600;
+            @include adaptiveClamp(font-size, 18, 16);
+            line-height: 120%;
+        }
+        .basket-product__price {
+            margin-left: auto;
+            @include adaptiveClamp(font-size, 18, 16);
+        }
+        
+        svg {
+            @include adaptiveClamp(width, 24, 20);
+            @include adaptiveClamp(height, 24, 20);
+            transition: all 0.3s ease  0s;
+        }
+    }
+    &._active .basket-hide-block__head svg {
+        transform: rotate(180deg);
+    }
+    &__body {
+        display: flex;
+        flex-direction: column;
+        @include adaptiveClamp(gap, 10, 8);
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        opacity: 0;
+        transition: all 0.2s ease  0s;
+    }
+    &._active .basket-hide-block__body {
+        @include adaptiveClamp(padding-top, 10, 8);
+        max-height: 700px;
+        pointer-events: all;
+        opacity: 1;
+        transition: all 0.3s ease  0s;
+    }
 }
+.basket-product {
+    
+    &__price {
+    }
+}
+
+
 

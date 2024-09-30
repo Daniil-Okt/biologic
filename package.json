@@ -73,6 +73,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "air-datepicker": "^3.5.3",
     "aos": "^2.3.4",
     "swiper": "^8.4.5"
   }

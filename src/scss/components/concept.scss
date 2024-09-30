@@ -1,0 +1,222 @@
+.concept {
+    @include adaptiveClamp(padding-top, 40, 24);
+
+    &__container {
+    }
+
+    &__top-web {
+        max-width: rem(952);
+        @include adaptiveClamp(margin-bottom, 40, 24);
+        h1 {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: rem(16);
+        }
+        h2 {
+            @include adaptiveClamp(font-size, 32, 18);
+            font-weight: 700;
+            line-height: 120%;
+            margin-bottom: rem(16);
+        }
+        p {
+            @include adaptiveClamp(font-size, 22, 18);
+            line-height: 120%;
+            margin-bottom: rem(10);
+        }
+        ul {
+            margin-bottom: rem(16);
+            li {
+                p {
+                    margin-bottom: 0;
+                    @include adaptiveClamp(font-size, 20, 16);
+                }
+            }
+        }
+        @media(max-width:768px){
+            display: none;
+        }
+    }
+
+    &__button-row {
+        display: flex;
+        justify-content: start;
+        @include adaptiveClamp(margin-top, 30, 24);
+        @media(max-width:768px){
+            justify-content: center;
+        }
+
+        &.mob {
+            @media(min-width:769px){
+                display: none;
+            }
+        }
+    }
+
+    &__button {
+        @include adaptiveClamp(padding-top, 17, 13);
+        @include adaptiveClamp(padding-bottom, 17, 13);
+        @include adaptiveClamp(font-size, 22, 16);
+        font-weight: 600;
+    }
+
+    &__top-mob {
+       
+    }
+}
+
+.concept-top {
+    @media(min-width:769px){
+        display: none;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(24);
+    margin-bottom: rem(24);
+    &__logo {
+        @include adaptiveClamp(width, 300, 145);
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    h1 {
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+
+
+.concept-slider {
+    
+    
+    &__wrapper {
+         @media(max-width:720px){
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            transform: none !important;
+            row-gap: rem(16);
+        }
+        @media(max-width:525px){
+            row-gap: rem(10);
+        }
+    }
+
+    &__slide {
+    }
+
+    &__pagination {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: rem(16);
+        @media(max-width:720px){
+            display: none;
+        }
+    }
+}
+
+.concept-slide {
+    height: auto;
+    
+    &__body {
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        background: var(--bg-card);
+        @include adaptiveClamp(padding-top, 20, 16);
+        @include adaptiveClamp(padding-bottom, 20, 16);
+        padding-right: rem(10);
+        padding-left: rem(10);
+        height: 100%;
+    }
+
+    &__img {
+        width: 100%;
+        @include adaptiveClamp(margin-bottom, 20, 16);
+        img {
+            width: 100%;
+            mix-blend-mode: multiply;
+        }
+        @media(max-width:720px){
+            @include adaptiveClamp(margin-bottom, 16, 10);
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        @include adaptiveClamp(font-size, 22, 18);
+        line-height: 120%;
+        text-align: center;
+        @include adaptiveClamp(margin-bottom, 10, 8);
+        min-height: rem(53);
+        @media(max-width:720px){
+            min-height: 0;
+            @include adaptiveClamp(font-size, 22, 13);
+            margin-top: auto;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        @include adaptiveClamp(font-size, 18, 14);
+        line-height: 120%;
+        text-align: center;
+        @include adaptiveClamp(margin-bottom, 20, 16);
+        @media(max-width:720px){
+            display: none;
+        }
+    }
+
+    &__button-row {
+        margin-top: auto;
+        display: flex;
+        justify-content: end;
+    }
+
+    &__button.button {
+        display: inline-flex;
+        align-items: center;
+        @include adaptiveClamp(font-size, 18, 14);
+        gap: rem(8);
+        @include adaptiveClamp(padding-top, 8, 3);
+        @include adaptiveClamp(padding-bottom, 8, 3);
+        border: 1px solid var(--gray-bl);
+        box-shadow: 0 0 2px 0 rgba(13, 71, 51, 0);
+        padding-right: rem(8);
+        padding-left: rem(16);
+        svg {
+            path {
+                transition: all 0.3s ease  0s;
+            }
+        }
+        &:hover {
+            border-color: var(--orange);
+            path {
+                fill: var(--orange);
+            }
+        }
+
+        @media(max-width:720px){
+            margin-top: rem(10);
+            @include adaptiveClamp(margin-top, 16, 3);
+            width: 100%;
+            justify-content: center;
+            @include adaptiveClamp(margin-right, 16, 0);
+            @include adaptiveClamp(margin-left, 16, 0);
+            @include adaptiveClamp(padding-top, 12, 7);
+            @include adaptiveClamp(padding-bottom, 12, 7);
+            @include adaptiveClamp(font-size, 17, 13);
+            svg {
+                display: none;
+            }
+        }
+    }
+
+    
+}

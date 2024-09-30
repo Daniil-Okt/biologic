@@ -24,6 +24,7 @@
 */
 // @import 'libs/aos';
 @import 'libs/swiper';
+@import 'libs/air-datepicker';
 
 /**
 * Подключение custom scrollbar для всего сайта
@@ -50,7 +51,11 @@
 /**
 * Подключение стилей отдельных блоков и секций
 */
-// @import 'components/header';
+@import 'components/header';
+@import 'components/concept';
+@import 'components/how';
+@import 'components/conduct';
+
 @import 'components/catalog';
 @import 'components/basket';
 @import 'components/making';
@@ -59,7 +64,20 @@
 @import 'components/about-page/about';
 @import 'components/about-page/wealth';
 @import 'components/about-page/team';
+@import 'components/delivery-page/delivery';
+@import 'components/contacts-page/contacts';
+@import 'components/concerns-page/concerns';
+@import 'components/documents';
+@import 'components/partners';
+@import 'components/quest';
+@import 'components/loyalty-page/loyalty';
+@import 'components/loyalty-page/partic';
+@import 'components/loyalty-page/loyalty-info';
+@import 'components/juridical';
+@import 'components/corporate-page/corporate';
+@import 'components/corporate-page/advant';
 
+@import 'components/nutrition-page/diet';
 
-// @import 'components/footer';
+@import 'components/footer';
 

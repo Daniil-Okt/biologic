@@ -55,6 +55,7 @@
                             Адрес доставки
                         </label>
                         <div class="inquiry__select select select-change">
+                            <input type="hidden" id="adres_id" name="adres_id" class="form__input-adres-id">
                             <div class="select__button">Изменить</div>
                             <input class="select__input text" value="Москва, улица Коштоянца, 29-104" placeholder="Адрес доставки" name="adress">
                             <div class="select__head">Выберите время доставки</div>
@@ -63,8 +64,8 @@
                                     Ваши адреса
                                 </div>
                                 <ul class="select__row">
-                                    <li class="select__item"><p>Москва, улица Коштоянца, 29-104</p><div class="select__item-button">Удалить</div></li>
-                                    <li class="select__item"><p>Москва, улица Ленина, 20-11</p><div class="select__item-button">Удалить</div></li>
+                                    <li class="select__item" data-adress_id="1234"><p>Москва, улица Коштоянца, 29-104</p><div class="select__item-button">Удалить</div></li>
+                                    <li class="select__item" data-adress_id="1434"><p>Москва, улица Ленина, 20-11</p><div class="select__item-button">Удалить</div></li>
                                 </ul>
                             </div>
                         </div>
@@ -102,7 +103,7 @@
                         <label class="input-item__label input-item__label-big">
                             Дата доставки
                         </label>
-                        <input type="date" name="data" placeholder="Выберите дату доставки" class="input-item__input text">
+                        <input readonly id="data-time-delivery" type="text" name="data" placeholder="Выберите дату доставки" class="input-item__input text">
                     </div>
                     <div class="making__input-item input-item ">
                         <label class="input-item__label input-item__label-big input-item__label-hint">
@@ -123,17 +124,27 @@
                             </div>
                         </label>
 
-                        <div class="inquiry__select select">
+                        <div class="inquiry__select select " id="time-options">
                             <input class="select__input" placeholder="time" placeholder="Выберите время доставки" type="hidden" name="time">
                             <div class="select__head">Выберите время доставки</div>
-                            <div class="select__list">
+                            <div class="select__list disablet" >
                                 <ul class="select__row">
-                                    <li class="select__item">15:00 — 16:00</li>
-                                    <li class="select__item">16:00 — 17:00</li>
-                                    <li class="select__item">18:00 — 19:00</li>
-                                    <li class="select__item">20:00 — 21:00</li>
-                                    <li class="select__item">21:00 — 22:00</li>
-                                    <li class="select__item">22:00 — 23:00</li>
+                                    <li class="select__item time-not">На эту дату доставка уже не осуществляется, выберите другую!</li>
+                                    <li class="select__item time-7">с 7:00</li>
+                                    <li class="select__item time-8">с 8:00</li>
+                                    <li class="select__item time-9">с 9:00</li>
+                                    <li class="select__item time-10">с 10:00</li>
+                                    <li class="select__item time-11">с 11:00</li>
+                                    <li class="select__item time-12">с 12:00</li>
+                                    <li class="select__item time-13">с 13:00</li>
+                                    <li class="select__item time-14">с 14:00</li>
+                                    <li class="select__item time-15">с 15:00</li>
+                                    <li class="select__item time-16">с 16:00</li>
+                                    <li class="select__item time-17">с 17:00</li>
+                                    <li class="select__item time-18">с 18:00</li>
+                                    <li class="select__item time-19">с 19:00</li>
+                                    <li class="select__item time-20">с 20:00</li>
+                                    <li class="select__item time-21">с 21:00</li>
                                 </ul>
                             </div>
                         </div>
@@ -295,7 +306,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
 </div>

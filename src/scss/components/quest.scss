@@ -1,0 +1,175 @@
+.quest {
+    @include adaptiveClamp(padding-bottom, 130, 100);
+    &__container {
+    }
+
+    &__row {
+        display: flex;
+        gap: rem(25);
+        @include adaptiveClamp(column-gap, 25, 10);
+        row-gap: rem(32);
+        @media(max-width:1140px){
+            flex-direction: column;
+        }
+    }
+
+    &__left {
+        @include adaptiveClamp(max-width, 585, 200);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        @include adaptiveClamp(gap, 20, 16);
+        p {
+            @include adaptiveClamp(font-size, 22, 16);
+            line-height: 120%;
+        }
+    
+
+        @media(max-width:1305px){
+            @include adaptiveClamp(max-width, 500, 150);
+        }
+        @media(max-width:1140px){
+            @include adaptiveClamp(max-width, 1300, 1250);
+        }
+    }
+
+    &__right {
+        width: 100%;
+    }
+
+    .office-panel {
+
+        &__order {
+            
+        }
+    
+        &__order-body {
+            @include adaptiveClamp(padding-right, 50, 16);
+            @include adaptiveClamp(padding-left, 50, 16);
+            @include adaptiveClamp(padding-top, 30, 16);
+            @include adaptiveClamp(padding-bottom, 30, 16);
+        }
+    }
+    .office-tabs {
+
+        &__nav {
+            @include adaptiveClamp(gap, 10, 5);
+            @media(max-width:450px){
+                margin-left: 0;
+                margin-right: 0;
+                @include adaptiveClamp(margin-bottom, 20, 16);
+                max-width: calc(100% + 1rem);
+                display: flex;
+                min-width: 100%;
+                z-index: 2;
+                overflow-x:auto;
+                // Firefox
+                scrollbar-width: none;  
+                scrollbar-color: transparent transparent; 
+                // WebKit (Chrome, Edge, Safari)
+                &::-webkit-scrollbar {  
+                    display: none;  
+                }
+                margin-right: rem(-16);
+                padding-right: rem(16);
+                padding-left: rem(3);
+                margin-left: rem(-2);
+                padding-top: rem(3);
+                padding-bottom: rem(3);
+            }
+        }
+    
+        &__trigger {
+            width: auto;
+            white-space: nowrap;
+            @include adaptiveClamp(font-size, 22, 16);
+            @include adaptiveClamp(padding-top, 14.8, 10);
+            @include adaptiveClamp(padding-bottom, 14.8, 10);
+            @include adaptiveClamp(padding-left, 25, 16);
+            @include adaptiveClamp(padding-right, 25, 16);
+        }
+    
+        &__content {
+        }
+    
+        &__panel {
+        }
+    }
+}
+
+
+.office-panel {
+
+    &__order {
+    }
+
+    &__order-body {
+    }
+
+    &__head {
+    }
+
+    &__body {
+    }
+
+    &__title {
+    }
+
+    &__sub-text {
+    }
+
+    &__item {
+    }
+
+    &__text-block {
+    }
+
+    &__sum {
+    }
+
+    &__item-right {
+    }
+
+    &__structure {
+    }
+
+    &__button {
+    }
+}
+
+.quest-panel {
+    @include adaptiveClamp(gap, 10, 8);
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: rem(15);
+        ._active & {
+            @include adaptiveClamp(margin-top, 20, 16);
+        }
+        p {
+            font-weight: 400;
+            @include adaptiveClamp(font-size, 18, 14);
+            line-height: 120%;
+        }
+        a {
+            text-decoration: underline;
+            color: var(--orange);
+        }
+
+        .list-block__item {
+           
+            svg {
+                @include adaptiveClamp(margin-top, 4.2, 2.5);
+            }
+        }
+    }
+}
+.quest-panel-head {
+
+    &__title {
+        font-weight: 600;
+        font-size: 22px;
+        @include adaptiveClamp(font-size, 22, 16);
+        line-height: 120%;
+    }
+}

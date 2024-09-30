@@ -1,5 +1,4 @@
 <div class="basket">
-    
     <div class="basket__container">
         <div class="basket__content">
             <div class="basket__button-close basket-close">
@@ -9,258 +8,886 @@
             </div>
             <div class="basket__top">
                 <div class="basket__price basket__text-block">
-                    <p>
-                        4 товара
+                    <p class="basket__tab-trigger active">
+                        Ваши товары (4)
                     </p>
-                    <p>
-                        3 450 руб.
+                    <p class="basket__tab-trigger">
+                        Ваши диеты (3)
                     </p>
                 </div>
             </div>
-            <div class="basket__body">
-                <div class="basket__product-row">
-                    <div class="basket__product basket-product">
-                        <div class="basket-product__left">
-                            <div class="basket-product__img">
-                                <img src="@img/basket-product-img.png" alt="">
+            <div class="basket__tab-panel active">
+                <div class="basket__body">
+                    <div class="basket__product-row">
+                        <div class="basket__product basket-product">
+                            <div class="basket-product__left">
+                                <div class="basket-product__img">
+                                    <img src="@img/basket-product-img.png" alt="">
+                                </div>
+                                <h3 class="basket-product__title">
+                                    Салат с тунцом
+                                </h3>
                             </div>
-                            <h3 class="basket-product__title">
-                                Салат с тунцом
-                            </h3>
-                        </div>
-                        <div class="basket-product__right">
-                            <div class="quantity">
-                                <div class="quantity__row">
-                                    <button class="quantity__number-minus" type="button">
-                                        -
-                                    </button>
-                                    <input type="number" min="1" value="1" readonly class="quantity__input">
-                                    <button class="quantity__number-plus" type="button">
-                                        +
-                                    </button>
+                            <div class="basket-product__right">
+                                <div class="quantity">
+                                    <div class="quantity__row">
+                                        <button class="quantity__number-minus" type="button">
+                                            -
+                                        </button>
+                                        <input type="number" min="1" value="1" readonly class="quantity__input">
+                                        <button class="quantity__number-plus" type="button">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="basket-product__price">
+                                    700 руб.
+                                </div>
+                                <div class="basket-product__delete">
+                                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7952 1.80036C14.1483 1.44413 14.1483 0.866567 13.7952 0.510337C13.442 0.154107 12.8695 0.154106 12.5164 0.510336L7.46107 5.60994L2.47328 0.578437C2.12015 0.222207 1.5476 0.222207 1.19447 0.578436C0.841332 0.934666 0.841331 1.51223 1.19447 1.86846L6.18225 6.89996L1.00704 12.1205C0.653904 12.4768 0.653904 13.0543 1.00704 13.4106C1.36017 13.7668 1.93272 13.7668 2.28585 13.4106L7.46107 8.18999L12.7038 13.4787C13.0569 13.8349 13.6295 13.8349 13.9826 13.4787C14.3357 13.1224 14.3357 12.5449 13.9826 12.1886L8.73988 6.89996L13.7952 1.80036Z" fill="#9DB09F" />
+                                    </svg>
                                 </div>
                             </div>
-                            <div class="basket-product__price">
-                                700 руб.
+                        </div>
+                        <div class="basket__product basket-product">
+                            <div class="basket-product__left">
+                                <div class="basket-product__img">
+                                    <img src="@img/basket-product-img.png" alt="">
+                                </div>
+                                <h3 class="basket-product__title">
+                                    Салат с тунцом
+                                </h3>
                             </div>
-                            <div class="basket-product__delete">
-                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7952 1.80036C14.1483 1.44413 14.1483 0.866567 13.7952 0.510337C13.442 0.154107 12.8695 0.154106 12.5164 0.510336L7.46107 5.60994L2.47328 0.578437C2.12015 0.222207 1.5476 0.222207 1.19447 0.578436C0.841332 0.934666 0.841331 1.51223 1.19447 1.86846L6.18225 6.89996L1.00704 12.1205C0.653904 12.4768 0.653904 13.0543 1.00704 13.4106C1.36017 13.7668 1.93272 13.7668 2.28585 13.4106L7.46107 8.18999L12.7038 13.4787C13.0569 13.8349 13.6295 13.8349 13.9826 13.4787C14.3357 13.1224 14.3357 12.5449 13.9826 12.1886L8.73988 6.89996L13.7952 1.80036Z" fill="#9DB09F" />
-                                </svg>
+                            <div class="basket-product__right">
+                                <div class="quantity">
+                                    <div class="quantity__row">
+                                        <button class="quantity__number-minus" type="button">
+                                            -
+                                        </button>
+                                        <input type="number" min="1" value="1" readonly class="quantity__input">
+                                        <button class="quantity__number-plus" type="button">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="basket-product__price">
+                                    700 руб.
+                                </div>
+                                <div class="basket-product__delete">
+                                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7952 1.80036C14.1483 1.44413 14.1483 0.866567 13.7952 0.510337C13.442 0.154107 12.8695 0.154106 12.5164 0.510336L7.46107 5.60994L2.47328 0.578437C2.12015 0.222207 1.5476 0.222207 1.19447 0.578436C0.841332 0.934666 0.841331 1.51223 1.19447 1.86846L6.18225 6.89996L1.00704 12.1205C0.653904 12.4768 0.653904 13.0543 1.00704 13.4106C1.36017 13.7668 1.93272 13.7668 2.28585 13.4106L7.46107 8.18999L12.7038 13.4787C13.0569 13.8349 13.6295 13.8349 13.9826 13.4787C14.3357 13.1224 14.3357 12.5449 13.9826 12.1886L8.73988 6.89996L13.7952 1.80036Z" fill="#9DB09F" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__product basket-product">
+                            <div class="basket-product__left">
+                                <div class="basket-product__img">
+                                    <img src="@img/basket-product-img.png" alt="">
+                                </div>
+                                <h3 class="basket-product__title">
+                                    Салат с рыбой и авокадо
+                                </h3>
+                            </div>
+                            <div class="basket-product__right">
+                                <div class="quantity">
+                                    <div class="quantity__row">
+                                        <button class="quantity__number-minus" type="button">
+                                            -
+                                        </button>
+                                        <input type="number" min="1" value="1" readonly class="quantity__input">
+                                        <button class="quantity__number-plus" type="button">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="basket-product__price">
+                                    700 руб.
+                                </div>
+                                <div class="basket-product__delete">
+                                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7952 1.80036C14.1483 1.44413 14.1483 0.866567 13.7952 0.510337C13.442 0.154107 12.8695 0.154106 12.5164 0.510336L7.46107 5.60994L2.47328 0.578437C2.12015 0.222207 1.5476 0.222207 1.19447 0.578436C0.841332 0.934666 0.841331 1.51223 1.19447 1.86846L6.18225 6.89996L1.00704 12.1205C0.653904 12.4768 0.653904 13.0543 1.00704 13.4106C1.36017 13.7668 1.93272 13.7668 2.28585 13.4106L7.46107 8.18999L12.7038 13.4787C13.0569 13.8349 13.6295 13.8349 13.9826 13.4787C14.3357 13.1224 14.3357 12.5449 13.9826 12.1886L8.73988 6.89996L13.7952 1.80036Z" fill="#9DB09F" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="basket__product basket-product">
-                        <div class="basket-product__left">
-                            <div class="basket-product__img">
-                                <img src="@img/basket-product-img.png" alt="">
-                            </div>
-                            <h3 class="basket-product__title">
-                                Салат с тунцом
-                            </h3>
-                        </div>
-                        <div class="basket-product__right">
-                            <div class="quantity">
-                                <div class="quantity__row">
-                                    <button class="quantity__number-minus" type="button">
-                                        -
-                                    </button>
-                                    <input type="number" min="1" value="1" readonly class="quantity__input">
-                                    <button class="quantity__number-plus" type="button">
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="basket-product__price">
-                                700 руб.
-                            </div>
-                            <div class="basket-product__delete">
-                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7952 1.80036C14.1483 1.44413 14.1483 0.866567 13.7952 0.510337C13.442 0.154107 12.8695 0.154106 12.5164 0.510336L7.46107 5.60994L2.47328 0.578437C2.12015 0.222207 1.5476 0.222207 1.19447 0.578436C0.841332 0.934666 0.841331 1.51223 1.19447 1.86846L6.18225 6.89996L1.00704 12.1205C0.653904 12.4768 0.653904 13.0543 1.00704 13.4106C1.36017 13.7668 1.93272 13.7668 2.28585 13.4106L7.46107 8.18999L12.7038 13.4787C13.0569 13.8349 13.6295 13.8349 13.9826 13.4787C14.3357 13.1224 14.3357 12.5449 13.9826 12.1886L8.73988 6.89996L13.7952 1.80036Z" fill="#9DB09F" />
-                                </svg>
-                            </div>
-                        </div>
+                    <div class="basket__title-row">
+                        Добавить к заказу
                     </div>
-                    <div class="basket__product basket-product">
-                        <div class="basket-product__left">
-                            <div class="basket-product__img">
-                                <img src="@img/basket-product-img.png" alt="">
+                    <div class="basket__added-row">
+                        <div class="basket__added basket-added basket-product">
+                            <div class="basket-product__left">
+                                <div class="basket-product__img">
+                                    <img src="@img/basket-added-img.png" alt="">
+                                </div>
+                                <h3 class="basket-product__title">
+                                    Морс лесные ягоды
+                                </h3>
                             </div>
-                            <h3 class="basket-product__title">
-                                Салат с рыбой и авокадо
-                            </h3>
-                        </div>
-                        <div class="basket-product__right">
-                            <div class="quantity">
-                                <div class="quantity__row">
-                                    <button class="quantity__number-minus" type="button">
-                                        -
-                                    </button>
-                                    <input type="number" min="1" value="1" readonly class="quantity__input">
-                                    <button class="quantity__number-plus" type="button">
-                                        +
-                                    </button>
+                            <div class="basket-product__right">
+                                <div class="basket-product__price">
+                                    700 руб.
+                                </div>
+                                <div class="basket-added__button-add button">
+                                    Добавить
                                 </div>
                             </div>
-                            <div class="basket-product__price">
-                                700 руб.
+                        </div>
+                        <div class="basket__added basket-added basket-product">
+                            <div class="basket-product__left">
+                                <div class="basket-product__img">
+                                    <img src="@img/basket-added-img.png" alt="">
+                                </div>
+                                <h3 class="basket-product__title">
+                                    Морс лесные ягоды
+                                </h3>
                             </div>
-                            <div class="basket-product__delete">
-                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7952 1.80036C14.1483 1.44413 14.1483 0.866567 13.7952 0.510337C13.442 0.154107 12.8695 0.154106 12.5164 0.510336L7.46107 5.60994L2.47328 0.578437C2.12015 0.222207 1.5476 0.222207 1.19447 0.578436C0.841332 0.934666 0.841331 1.51223 1.19447 1.86846L6.18225 6.89996L1.00704 12.1205C0.653904 12.4768 0.653904 13.0543 1.00704 13.4106C1.36017 13.7668 1.93272 13.7668 2.28585 13.4106L7.46107 8.18999L12.7038 13.4787C13.0569 13.8349 13.6295 13.8349 13.9826 13.4787C14.3357 13.1224 14.3357 12.5449 13.9826 12.1886L8.73988 6.89996L13.7952 1.80036Z" fill="#9DB09F" />
-                                </svg>
+                            <div class="basket-product__right">
+                                <div class="basket-product__price">
+                                    700 руб.
+                                </div>
+                                <div class="basket-added__button-add button">
+                                    Добавить
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__added basket-added basket-product">
+                            <div class="basket-product__left">
+                                <div class="basket-product__img">
+                                    <img src="@img/basket-added-img.png" alt="">
+                                </div>
+                                <h3 class="basket-product__title">
+                                    Морс лесные ягоды
+                                </h3>
+                            </div>
+                            <div class="basket-product__right">
+                                <div class="basket-product__price">
+                                    700 руб.
+                                </div>
+                                <div class="basket-added__button-add button">
+                                    Добавить
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__added basket-added basket-product">
+                            <div class="basket-product__left">
+                                <div class="basket-product__img">
+                                    <img src="@img/basket-added-img.png" alt="">
+                                </div>
+                                <h3 class="basket-product__title">
+                                    Морс лесные ягоды
+                                </h3>
+                            </div>
+                            <div class="basket-product__right">
+                                <div class="basket-product__price">
+                                    700 руб.
+                                </div>
+                                <div class="basket-added__button-add button">
+                                    Добавить
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__added basket-added basket-product">
+                            <div class="basket-product__left">
+                                <div class="basket-product__img">
+                                    <img src="@img/basket-added-img.png" alt="">
+                                </div>
+                                <h3 class="basket-product__title">
+                                    Морс лесные ягоды
+                                </h3>
+                            </div>
+                            <div class="basket-product__right">
+                                <div class="basket-product__price">
+                                    700 руб.
+                                </div>
+                                <div class="basket-added__button-add button">
+                                    Добавить
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__added basket-added basket-product">
+                            <div class="basket-product__left">
+                                <div class="basket-product__img">
+                                    <img src="@img/basket-added-img.png" alt="">
+                                </div>
+                                <h3 class="basket-product__title">
+                                    Морс лесные ягоды
+                                </h3>
+                            </div>
+                            <div class="basket-product__right">
+                                <div class="basket-product__price">
+                                    700 руб.
+                                </div>
+                                <div class="basket-added__button-add button">
+                                    Добавить
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="basket__title-row">
-                    Добавить к заказу
-                </div>
-                <div class="basket__added-row">
-                    <div class="basket__added basket-added basket-product">
-                        <div class="basket-product__left">
-                            <div class="basket-product__img">
-                                <img src="@img/basket-added-img.png" alt="">
-                            </div>
-                            <h3 class="basket-product__title">
-                                Морс лесные ягоды
-                            </h3>
-                        </div>
-                        <div class="basket-product__right">
-                            <div class="basket-product__price">
-                                700 руб.
-                            </div>
-                            <div class="basket-added__button-add button">
-                                Добавить
-                            </div>
-                        </div>
+                <div class="basket__bot basket-bot">
+                    <div class="basket-bot__price basket__text-block">
+                        <p>
+                            4 товара
+                        </p>
+                        <p>
+                            3 450 руб.
+                        </p>
                     </div>
-                    <div class="basket__added basket-added basket-product">
-                        <div class="basket-product__left">
-                            <div class="basket-product__img">
-                                <img src="@img/basket-added-img.png" alt="">
-                            </div>
-                            <h3 class="basket-product__title">
-                                Морс лесные ягоды
-                            </h3>
-                        </div>
-                        <div class="basket-product__right">
-                            <div class="basket-product__price">
-                                700 руб.
-                            </div>
-                            <div class="basket-added__button-add button">
-                                Добавить
-                            </div>
-                        </div>
+                    <div class="basket-bot__discount basket__text-block">
+                        <p>
+                            Персональная скидка 5%
+                        </p>
+                        <p>
+                            – 175,50 руб.
+                        </p>
                     </div>
-                    <div class="basket__added basket-added basket-product">
-                        <div class="basket-product__left">
-                            <div class="basket-product__img">
-                                <img src="@img/basket-added-img.png" alt="">
-                            </div>
-                            <h3 class="basket-product__title">
-                                Морс лесные ягоды
-                            </h3>
-                        </div>
-                        <div class="basket-product__right">
-                            <div class="basket-product__price">
-                                700 руб.
-                            </div>
-                            <div class="basket-added__button-add button">
-                                Добавить
-                            </div>
-                        </div>
+                    <div class="basket-bot__result-price basket__text-block">
+                        <p>
+                            Сумма заказа
+                        </p>
+                        <p>
+                            3 274, 50 руб.
+                        </p>
                     </div>
-                    <div class="basket__added basket-added basket-product">
-                        <div class="basket-product__left">
-                            <div class="basket-product__img">
-                                <img src="@img/basket-added-img.png" alt="">
-                            </div>
-                            <h3 class="basket-product__title">
-                                Морс лесные ягоды
-                            </h3>
-                        </div>
-                        <div class="basket-product__right">
-                            <div class="basket-product__price">
-                                700 руб.
-                            </div>
-                            <div class="basket-added__button-add button">
-                                Добавить
-                            </div>
-                        </div>
-                    </div>
-                    <div class="basket__added basket-added basket-product">
-                        <div class="basket-product__left">
-                            <div class="basket-product__img">
-                                <img src="@img/basket-added-img.png" alt="">
-                            </div>
-                            <h3 class="basket-product__title">
-                                Морс лесные ягоды
-                            </h3>
-                        </div>
-                        <div class="basket-product__right">
-                            <div class="basket-product__price">
-                                700 руб.
-                            </div>
-                            <div class="basket-added__button-add button">
-                                Добавить
-                            </div>
-                        </div>
-                    </div>
-                    <div class="basket__added basket-added basket-product">
-                        <div class="basket-product__left">
-                            <div class="basket-product__img">
-                                <img src="@img/basket-added-img.png" alt="">
-                            </div>
-                            <h3 class="basket-product__title">
-                                Морс лесные ягоды
-                            </h3>
-                        </div>
-                        <div class="basket-product__right">
-                            <div class="basket-product__price">
-                                700 руб.
-                            </div>
-                            <div class="basket-added__button-add button">
-                                Добавить
-                            </div>
+                    <div class="basket-bot__button-row disablet">
+                        <p>
+                            Минимальная стоимость заказа 3 000 руб.
+                        </p>
+                        <div class="basket-bot__button button gray">
+                            Оформить заказ
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="basket__bot basket-bot">
-                <div class="basket-bot__price basket__text-block">
-                    <p>
-                        4 товара
-                    </p>
-                    <p>
-                        3 450 руб.
-                    </p>
+            <div class="basket__tab-panel">
+                <div class="basket__body">
+                    <div class="basket__product-row">
+                        <script>
+                            function toggleActiveClassOnClick(element) {
+                                const heads = document.querySelectorAll('.basket-hide-block__head');
+                                const isActive = element.classList.contains('_active');
+                                heads.forEach(head => {
+                                    head.classList.remove('_active');
+                                    head.parentElement.classList.remove('_active');
+                                });
+                                if (!isActive) {
+                                    element.classList.add('_active');
+                                    element.parentElement.classList.add('_active');
+                                }
+                            }
+                        </script>
+                        <div class="basket__hide-block basket-hide-block">
+                            <div class="basket-hide-block__head" onclick="toggleActiveClassOnClick(this)">
+                                <p>
+                                    День 1
+                                </p>
+                                <div class="basket-product__price">
+                                    4000 руб.
+                                </div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.2929 14.6768C11.6834 15.0673 12.3166 15.0673 12.7071 14.6768L18.6844 8.69982C19.0721 8.31216 19.6997 8.30894 20.0913 8.6926L20.2782 8.87571C20.6756 9.26501 20.6789 9.90381 20.2855 10.2972L12.7071 17.8753C12.3166 18.2658 11.6834 18.2658 11.2929 17.8753L3.71446 10.2972C3.32107 9.90381 3.32436 9.26501 3.72176 8.87571L3.90869 8.6926C4.30033 8.30893 4.92787 8.31216 5.31556 8.69982L11.2929 14.6768Z" fill="#0D4733" />
+                                </svg>
+                            </div>
+                            <div class="basket-hide-block__body">
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="basket__hide-block basket-hide-block">
+                            <div class="basket-hide-block__head" onclick="toggleActiveClassOnClick(this)">
+                                <p>
+                                    День 2
+                                </p>
+                                <div class="basket-product__price">
+                                    4000 руб.
+                                </div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.2929 14.6768C11.6834 15.0673 12.3166 15.0673 12.7071 14.6768L18.6844 8.69982C19.0721 8.31216 19.6997 8.30894 20.0913 8.6926L20.2782 8.87571C20.6756 9.26501 20.6789 9.90381 20.2855 10.2972L12.7071 17.8753C12.3166 18.2658 11.6834 18.2658 11.2929 17.8753L3.71446 10.2972C3.32107 9.90381 3.32436 9.26501 3.72176 8.87571L3.90869 8.6926C4.30033 8.30893 4.92787 8.31216 5.31556 8.69982L11.2929 14.6768Z" fill="#0D4733" />
+                                </svg>
+                            </div>
+                            <div class="basket-hide-block__body">
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__hide-block basket-hide-block">
+                            <div class="basket-hide-block__head">
+                                <p>
+                                    День 3
+                                </p>
+                                <div class="basket-product__price">
+                                    4000 руб.
+                                </div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.2929 14.6768C11.6834 15.0673 12.3166 15.0673 12.7071 14.6768L18.6844 8.69982C19.0721 8.31216 19.6997 8.30894 20.0913 8.6926L20.2782 8.87571C20.6756 9.26501 20.6789 9.90381 20.2855 10.2972L12.7071 17.8753C12.3166 18.2658 11.6834 18.2658 11.2929 17.8753L3.71446 10.2972C3.32107 9.90381 3.32436 9.26501 3.72176 8.87571L3.90869 8.6926C4.30033 8.30893 4.92787 8.31216 5.31556 8.69982L11.2929 14.6768Z" fill="#0D4733" />
+                                </svg>
+                            </div>
+                            <div class="basket-hide-block__body">
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__hide-block basket-hide-block">
+                            <div class="basket-hide-block__head">
+                                <p>
+                                    День 4
+                                </p>
+                                <div class="basket-product__price">
+                                    4000 руб.
+                                </div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.2929 14.6768C11.6834 15.0673 12.3166 15.0673 12.7071 14.6768L18.6844 8.69982C19.0721 8.31216 19.6997 8.30894 20.0913 8.6926L20.2782 8.87571C20.6756 9.26501 20.6789 9.90381 20.2855 10.2972L12.7071 17.8753C12.3166 18.2658 11.6834 18.2658 11.2929 17.8753L3.71446 10.2972C3.32107 9.90381 3.32436 9.26501 3.72176 8.87571L3.90869 8.6926C4.30033 8.30893 4.92787 8.31216 5.31556 8.69982L11.2929 14.6768Z" fill="#0D4733" />
+                                </svg>
+                            </div>
+                            <div class="basket-hide-block__body">
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__hide-block basket-hide-block">
+                            <div class="basket-hide-block__head">
+                                <p>
+                                    День 5
+                                </p>
+                                <div class="basket-product__price">
+                                    4000 руб.
+                                </div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.2929 14.6768C11.6834 15.0673 12.3166 15.0673 12.7071 14.6768L18.6844 8.69982C19.0721 8.31216 19.6997 8.30894 20.0913 8.6926L20.2782 8.87571C20.6756 9.26501 20.6789 9.90381 20.2855 10.2972L12.7071 17.8753C12.3166 18.2658 11.6834 18.2658 11.2929 17.8753L3.71446 10.2972C3.32107 9.90381 3.32436 9.26501 3.72176 8.87571L3.90869 8.6926C4.30033 8.30893 4.92787 8.31216 5.31556 8.69982L11.2929 14.6768Z" fill="#0D4733" />
+                                </svg>
+                            </div>
+                            <div class="basket-hide-block__body">
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__hide-block basket-hide-block">
+                            <div class="basket-hide-block__head">
+                                <p>
+                                    День 6
+                                </p>
+                                <div class="basket-product__price">
+                                    4000 руб.
+                                </div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.2929 14.6768C11.6834 15.0673 12.3166 15.0673 12.7071 14.6768L18.6844 8.69982C19.0721 8.31216 19.6997 8.30894 20.0913 8.6926L20.2782 8.87571C20.6756 9.26501 20.6789 9.90381 20.2855 10.2972L12.7071 17.8753C12.3166 18.2658 11.6834 18.2658 11.2929 17.8753L3.71446 10.2972C3.32107 9.90381 3.32436 9.26501 3.72176 8.87571L3.90869 8.6926C4.30033 8.30893 4.92787 8.31216 5.31556 8.69982L11.2929 14.6768Z" fill="#0D4733" />
+                                </svg>
+                            </div>
+                            <div class="basket-hide-block__body">
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__hide-block basket-hide-block">
+                            <div class="basket-hide-block__head">
+                                <p>
+                                    День 7
+                                </p>
+                                <div class="basket-product__price">
+                                    4000 руб.
+                                </div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.2929 14.6768C11.6834 15.0673 12.3166 15.0673 12.7071 14.6768L18.6844 8.69982C19.0721 8.31216 19.6997 8.30894 20.0913 8.6926L20.2782 8.87571C20.6756 9.26501 20.6789 9.90381 20.2855 10.2972L12.7071 17.8753C12.3166 18.2658 11.6834 18.2658 11.2929 17.8753L3.71446 10.2972C3.32107 9.90381 3.32436 9.26501 3.72176 8.87571L3.90869 8.6926C4.30033 8.30893 4.92787 8.31216 5.31556 8.69982L11.2929 14.6768Z" fill="#0D4733" />
+                                </svg>
+                            </div>
+                            <div class="basket-hide-block__body">
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                                <div class="basket__product basket-product basket-product-diet">
+                                    <div class="basket-product__left">
+                                        <div class="basket-product__img">
+                                            <img src="@img/basket-product-img.png" alt="">
+                                        </div>
+                                        <h3 class="basket-product__title">
+                                            Салат с тунцом
+                                        </h3>
+                                    </div>
+                                    <div class="basket-product__change">
+                                        Изменить
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
-                <div class="basket-bot__discount basket__text-block">
-                    <p>
-                        Персональная скидка 5%
+                <div class="basket__bot basket-bot">
+                    <p class="basket-bot__min-text">
+                        Минимально время осуществления доставки через 12 часов
                     </p>
-                    <p>
-                        – 175,50 руб.
+                    <div class="basket-bot__price basket__text-block">
+                        <p>
+                            Диета: Гепатоз 
+                        </p>
+                        <p>
+                            14 дней
+                        </p>
+                        <p>
+                            56 000 руб.
+                        </p>
+                    </div>
+                    <div class="basket-bot__discount basket__text-block">
+                        <p>
+                            Персональная скидка 5%
+                        </p>
+                        <p>
+                            – 2 800 руб.
+                        </p>
+                    </div>
+                    <p class="basket-bot__min-text">
+                        Вы получите уведомление о возможности заполнить меню на следующие дни
                     </p>
-                </div>
-                <div class="basket-bot__result-price basket__text-block">
-                    <p>
-                        Сумма заказа
-                    </p>
-                    <p>
-                        3 274, 50 руб.
-                    </p>
-                </div>
-                <div class="basket-bot__button-row disablet">
-                    <p>
-                        Минимальная стоимость заказа 3 000 руб.
-                    </p>
-                    <div class="basket-bot__button button gray">
-                        Оформить заказ
+                    <div class="basket-bot__result-price basket__text-block">
+                        <p>
+                            Сумма заказа
+                        </p>
+                        <p>
+                            53 200 руб.
+                        </p>
+                    </div>
+                    <div class="basket-bot__button-row disablet">
+                        <p>
+                            Для оформления заказа нужно выбрать меню каждого дня
+                        </p>
+                        <div class="basket-bot__button button gray">
+                            Оформить заказ
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>  
     </div>
 </div>

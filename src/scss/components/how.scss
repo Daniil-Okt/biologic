@@ -1,0 +1,124 @@
+.how {
+    @include adaptiveClamp(padding-top, 130, 100);
+    &__container {
+    }
+
+    h2 {
+        @include adaptiveClamp(margin-bottom, 50, 16);
+    }
+    &__body {
+    }
+
+    &__pagination-number {
+        @include adaptiveClamp(margin-bottom, 50, 16);
+        @media(max-width:720px){
+            display: block;
+        }
+    }
+
+    &__slider {
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__slide {
+    }
+}
+.title-block {
+}
+.pagination-number {
+
+    &__wrapper {
+    }
+
+    &__item {
+    }
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.how-slide {
+    height: auto;
+    @media(min-width:1471px){
+        &:first-child {
+            width: rem(356);
+        }
+        &:nth-child(2) {
+            width: rem(410);
+            margin-top: rem(266);
+            margin-left: rem(-87);
+        }
+        &:nth-child(3) {
+            width: rem(320);
+            margin-top: rem(20);
+            margin-left: rem(-65);
+        }
+        &:nth-child(4) {
+            width: rem(408);
+            margin-top: rem(292);
+            margin-left: rem(-127);
+        }
+        &:nth-child(5) {
+            width: rem(308);
+            margin-top: rem(40);
+            margin-left: rem(-84);
+        }
+    }
+    &__card {
+      
+        @media(max-width:1470px){
+            height: 100%;
+        }
+    }
+
+    &__fon {
+    }
+
+    &__body {
+        aspect-ratio: 356 / 360;
+        padding-top: 23% !important;
+        padding-right: rem(46);
+        padding-left: rem(46);
+    }
+
+    &__number {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+}
+.slide-card {
+
+    &__fon {
+    }
+
+    &__body {
+    }
+
+    &__number {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+
+    &__button {
+    }
+
+    &__divider {
+    }
+}
+.mb {
+}
+.line {
+}
+.min {
+}

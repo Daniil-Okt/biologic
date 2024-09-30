@@ -1,0 +1,68 @@
+.loyalty-info {
+    @include adaptiveClamp(padding-top, 130, 100);
+    @include adaptiveClamp(padding-bottom, 130, 100);
+    &__container {
+    }
+
+    &__row {
+        display: flex;
+       
+        @include adaptiveClamp(gap, 25, 16);
+        @media(max-width:750px){
+            flex-direction: column;
+            @include adaptiveClamp(gap, 55, 50);
+        }
+    }
+
+    &__left {
+        h2 {
+            @include adaptiveClamp(margin-bottom, 25, 16);
+        }
+        max-width: rem(685);
+        width: 100%;
+        .list-block__text {
+            p {
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__title {
+    }
+
+    .list-block {
+        @include adaptiveClamp(gap, 25, 16);
+        &__item {
+        }
+    
+        &__text {
+        }
+    }
+
+    &__right {
+        .loyalty-info-corporate & {
+            max-width: rem(700)
+        }
+        h2 {
+            @include adaptiveClamp(margin-bottom, 10, 8);
+        }
+
+        .contacts__item {
+            width: 100%;
+            max-width: rem(463);
+            @media(max-width:750px){
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    &__text-right {
+        margin-bottom: rem(25);
+        font-weight: 400;
+        @include adaptiveClamp(font-size, 18, 14);
+        line-height: 120%;
+    }
+}
+.title-block-two {
+}
+

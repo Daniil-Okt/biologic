@@ -1,0 +1,86 @@
+.documents {
+    padding-top: rem(25);
+    @include adaptiveClamp(padding-bottom, 130, 100);
+    &__container {
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include adaptiveClamp(gap, 25, 8);
+        @media(max-width:720px){
+            grid-template-columns: 1fr;
+            max-width: rem(500);
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__item {
+        position: relative;
+        @include adaptiveClamp(min-height, 336, 157);
+        padding: rem(16);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease  0s;
+        h3 {
+            font-weight: 600;
+            @include adaptiveClamp(font-size, 22, 16);
+            line-height: 120%;
+            text-align: center;
+            transition: all 0.3s ease  0s;
+        }
+        @media(max-width:900px){
+            padding-bottom: rem(50);
+        }
+
+        &:hover {
+            box-shadow: 0 0 2px 0 var(--orange);
+            h3 {
+                color: var(--orange);
+            }
+            .documents__button {
+                border-color: var(--orange);
+                span {
+                    color: var(--orange);
+                }  
+                svg {
+                    path {
+                        fill: var(--orange);
+                    }
+                }
+            }
+        }
+    }
+
+    &__button {
+        display: inline-flex;
+        align-items: center;
+        @include adaptiveClamp(font-size, 18, 14);
+        gap: rem(12.7);
+        position: absolute;
+        @include adaptiveClamp(bottom, 20, 16);
+        @include adaptiveClamp(right, 20, 16);
+        padding-left: rem(16);
+        padding-right: rem(12.7);
+        @include adaptiveClamp(padding-top, 11, 9);
+        @include adaptiveClamp(padding-bottom, 11, 9);
+        font-weight: 400;
+        border: 1px solid var(--gray-bl);
+        span {
+            transition: all 0.3s ease  0s;
+        }
+        svg {
+            width: rem(16);
+            path {
+                transition: all 0.3s ease  0s;
+            }
+        }
+    }
+}
+.button {
+}
+.white {
+}

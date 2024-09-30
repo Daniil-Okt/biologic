@@ -1,0 +1,119 @@
+.juridical {
+    /* Основной текст */
+    font-size: 1rem; /* 16px по умолчанию */
+    line-height: 1.5; /* Увеличенное межстрочное расстояние для удобства чтения */
+    margin-bottom: 1rem; /* Отступ между параграфами */
+
+    /* Основной текст для мобильных экранов */
+    @media (max-width: 750px) {
+        font-size: 0.875rem; /* 14px для мобильных */
+    }
+
+    /* Заголовки */
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
+        margin-bottom: 1.5rem; /* Отступ под заголовками */
+        color: #0d4733; /* Основной цвет заголовков */
+    }
+
+    /* Размеры заголовков для больших экранов */
+    h1 {
+        font-size: 2.5rem; /* 40px */
+        margin-top: 2rem; /* Отступ сверху */
+    }
+
+    h2 {
+        font-size: 2rem; /* 32px */
+        margin-top: 1.75rem; /* Отступ сверху */
+    }
+
+    h3 {
+        font-size: 1.75rem; /* 28px */
+        margin-top: 1.5rem; /* Отступ сверху */
+    }
+
+    h4 {
+        font-size: 1.5rem; /* 24px */
+        margin-top: 1.25rem; /* Отступ сверху */
+    }
+
+    h5 {
+        font-size: 1.25rem; /* 20px */
+        margin-top: 1rem; /* Отступ сверху */
+    }
+
+    h6 {
+        font-size: 1rem; /* 16px */
+        margin-top: 0.875rem; /* Отступ сверху */
+    }
+
+    /* Заголовки для мобильных экранов */
+    @media (max-width: 750px) {
+        h1 {
+            font-size: 1.875rem; /* 30px */
+            margin-top: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 1.375rem; /* 22px */
+            margin-top: 1.25rem;
+        }
+        
+        h3 {
+            font-size: 1.25rem; /* 20px */
+            margin-top: 1rem;
+        }
+        
+        h4 {
+            font-size: 1.125rem; /* 18px */
+            margin-top: 0.875rem;
+        }
+        
+        h5 {
+            font-size: 1rem; /* 16px */
+            margin-top: 0.75rem;
+        }
+        
+        h6 {
+            font-size: 0.875rem; /* 14px */
+            margin-top: 0.75rem;
+        }
+    }
+
+    /* Списки */
+    ul, ol {
+        padding-left: 1.5rem;
+        margin-bottom: 1rem; /* Отступ под списками */
+        list-style-type: disc;
+    }
+    
+    li {
+        margin-bottom: 0.75rem; /* Отступ между элементами списка */
+        list-style-type: disc;
+    }
+    
+    /* Таблицы */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1.5rem; /* Отступ под таблицей */
+    }
+    
+    th, td {
+        padding: 0.75rem 1rem; /* Отступы внутри ячеек */
+        border: 1px solid #cacbc2; /* Границы ячеек */
+    }
+    
+    th {
+        background-color: #6b9441; /* Фон заголовков таблиц */
+        color: #edeee7; /* Цвет текста заголовков */
+        &:first-child {
+            font-weight: 600;
+        }
+    }
+    
+    /* Общие отступы */
+    p, ul, ol, table {
+        margin-bottom: 1.5rem; /* Отступ под основными элементами */
+    }
+}

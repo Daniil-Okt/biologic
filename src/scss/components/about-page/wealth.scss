@@ -39,6 +39,8 @@
 .swiper-wrapper {
 }
 .wealth-slide {
+    height: auto;
+    
     &:nth-child(odd):last-of-type {
         transform: translateX(50%);
         @media(max-width:1350px){
@@ -46,9 +48,10 @@
         }
     }
     @media(max-width:1075px){
-        width: rem(343);
+        // width: rem(343);
     }
     &__row {
+        height: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         // @include adaptiveClamp(gap, 25, 8);
@@ -59,20 +62,36 @@
         @media(max-width:1350px){
             grid-template-columns: 1fr;
             gap: rem(8);
+          
         }
-        
+        @media(max-width:1200px){
+            display: flex;
+            flex-direction: column;
+        }
         
     }
 
     &__left {
+        width: 100%;
+        min-height: auto;
+        // aspect-ratio: 1 / 1;
+        aspect-ratio: ar(346,342);
+        @media(max-width:1200px){
+            // height: 100%;
+            flex: auto;
+        }
     }
 
     &__fon {
     }
 
     &__body {
+        padding-bottom: rem(40);
         @media(max-width:1350px){
             @include adaptiveClamp(padding-top, 133, 89);
+        }
+        @media(max-width:500px){
+            padding-top: 35% !important;
         }
     }
 

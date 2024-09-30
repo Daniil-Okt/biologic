@@ -1,0 +1,225 @@
+.advant {
+    @include adaptiveClamp(padding-top, 130, 100);
+    &__container {
+    }
+
+    h2 {
+        @include adaptiveClamp(margin-bottom, 50, 16);
+    }
+    &__row {
+
+        @media(min-width:1166px){
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: rem(25);
+        }
+    }
+
+    &__content {
+        @include adaptiveClamp(max-width, 732, 200);
+
+        @media(max-width:1165px){
+            @include adaptiveClamp(max-width, 1732, 1200);
+        }
+        &.two {
+            @include adaptiveClamp(max-width, 691, 200);
+            min-width: rem(600);
+            @media(max-width:1165px){
+                @include adaptiveClamp(max-width, 1732, 1200);
+                min-width: 0;
+            }
+        }
+    }
+
+    &__pagination-number {
+        @include adaptiveClamp(margin-bottom, 50, 16);
+        @media(max-width:660px){
+            display: block;
+        }
+        .advant-home & {
+            @media(max-width:720px){
+                display: block;
+            }
+        }
+    }
+
+    &__slider {
+        // width: auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    &__wrapper {
+       
+        @media(min-width:1166px){
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            &.advant__wrapper-four {
+                row-gap: rem(10);
+            }
+        }
+    }
+
+
+    &__slide {
+    }
+
+    &__img {
+        margin-top: auto;
+        margin-bottom: auto;
+        img {
+            width: 100%;
+        }
+        @media(max-width:1165px){
+            display: none;
+        }
+    }   
+
+    &__bot {
+        @include adaptiveClamp(padding-top, 130, 100);
+        @include adaptiveClamp(padding-bottom, 130, 100);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: rem(706);
+        margin-left: auto;
+        margin-right: auto;
+        h2 {
+            @include adaptiveClamp(margin-bottom, 25, 16);
+        }
+        p, a {
+            font-weight: 600;
+            @include adaptiveClamp(font-size, 22, 14);
+            line-height: 120%;
+            @include adaptiveClamp(margin-bottom, 25, 16);
+        }
+        a {
+            transition: all 0.3s ease  0s;
+            &:hover {
+                color: var(--orange);
+            }
+        }
+        .row-block-two {
+            flex-direction: row;
+            p, a {
+                margin-bottom: 0 !important;
+            }
+        }
+        .contacts-item {
+            &__body {
+                align-items: center;
+            }
+        }
+    }
+}
+
+
+
+.pagination-number {
+
+    &__wrapper {
+
+    }
+
+    &__item {
+    }
+}
+
+.advant-slide {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveClamp(gap, 16, 8);
+    height: auto;
+    @media(min-width:1166px){
+        max-width: rem(341);
+        &:nth-child(2) {
+            transform: translateY(rem(22));
+        }
+        &:last-child {
+            max-width: rem(324);
+            transform: translateX(48.5%);
+            &.big {
+                // max-width: rem(401);
+                // min-width: rem(401);
+                transform: translateX(32.5%);
+                .advant-slide__row {
+                    margin-right: rem(-79);
+                }
+            }
+        }
+        .advant__wrapper-four & {
+            &:nth-child(2) {
+                transform: translateY(rem(27));
+            }
+            &:nth-child(3) {
+                max-width: rem(324);
+                transform: translateX(rem(34));
+            }
+            &:last-child {
+                max-width: rem(324);
+                transform: translateX(rem(15)) translateY(rem(30));
+            }
+        }
+    }
+    &__row {
+        display: flex;
+        flex-direction: column;
+    }
+    &__card {
+    }
+    &__img {
+        @media(min-width:1166px){
+            display: none;
+        }
+        padding-right: rem(88);
+        img {
+            width: 100%;
+        }
+    }
+    &__fon {
+    }
+
+    &__body {
+        aspect-ratio: 1 / 1;
+        
+        @media(max-width:900px){
+            padding-top: 30% !important;
+        }
+    }
+
+    &__number {
+        @media(max-width:660px){
+            display: none;
+        }
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+}
+.slide-card {
+
+    &__fon {
+    }
+
+    &__body {
+    }
+
+    &__number {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+.partners {
+    padding-top: rem(25);
+    @include adaptiveClamp(padding-bottom, 130, 100);
+    &__container {
+    }
+    &__top {
+        max-width: rem(951);
+        margin-bottom: rem(50);
+    }
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: rem(50) rem(25);
+        @media(max-width:720px){
+            flex-direction: column;
+        }
+    }
+
+    &__body {
+        max-width: rem(951);
+        width: 100%;
+    }
+
+    &__text-block {
+        p {
+            @include adaptiveClamp(font-size, 22, 16);
+            font-weight: 600;
+            line-height: 120%;
+        }
+    }
+
+    &__card-row {
+        width: auto;
+        max-width: rem(463);
+        .card {
+            max-width: 100%;
+        }
+    }
+}
+.row-block {
+}
+.title-block-two {
+}
+.contacts {
+
+    &__item {
+    }
+}
+.contacts-item {
+
+    &__icon {
+    }
+
+    &__title {
+    }
+
+    &__body {
+    }
+}
+.card {
+}
+.row-block-two {
+}
